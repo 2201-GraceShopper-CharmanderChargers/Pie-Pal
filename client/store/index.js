@@ -21,7 +21,7 @@ import thunkMiddleware from 'redux-thunk'
 import {composeWithDevTools} from 'redux-devtools-extension'
 import auth from './auth'
 import pizzasReducer from './pizzas';
-import pizzaReducer from './singlePizza';
+import pizzaReducer from './SinglePizza';
 import cartReducer from './cart';
 import userReducer from './users';
 
