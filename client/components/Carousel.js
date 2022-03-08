@@ -20,7 +20,6 @@ const CarouselSlide = () => {
     getPizzas();
   }, []);
 
-  // const {pizzas} = props
   return (
     <div className="carousel">
       <Carousel fade controls={false} pause={false} > 

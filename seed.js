@@ -118,7 +118,6 @@ const fakePizzas = [
     price: 99.99,
     imageUrl:
       '	https://pbs.twimg.com/media/DhMFibnXcAEIN5h?format=jpg&name=4096x4096',
-    //'https://pbs.twimg.com/media/DhMFibnXcAEIN5h?format=jpg&name=900x900'
     cityOfPizza: 'NYC',
   },
   {
