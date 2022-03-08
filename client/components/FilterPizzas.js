@@ -9,7 +9,7 @@ const FilterPizzas = (props) => {
     <div>
       <Dropdown>
         <Dropdown.Toggle variant="success" id="filterdropdown">
-          <p>selection</p>
+          <p>Choose a Location</p>
         </Dropdown.Toggle>
         <Dropdown.Menu>
           {pizzaCities.map((city, i) => {
