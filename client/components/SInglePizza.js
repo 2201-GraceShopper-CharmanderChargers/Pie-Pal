@@ -5,6 +5,7 @@ import { fetchPizza } from '../store/singlePizza';
 import { addCart } from '../store/cart';
 import Cart from './Cart';
 import { Link } from 'react-router-dom';
+import Card from 'react-bootstrap/Card';
 
 class SinglePizza extends React.Component {
   constructor(props) {
@@ -68,26 +69,30 @@ class SinglePizza extends React.Component {
         </form>
       </div>
     ) : !this.inCart ? (
-      <form className="single-pizza" onSubmit={this.handleSubmit}>
-        <img src={pizza.imageUrl} />
-        <h1>{pizza.name}</h1>
-        <p>{pizza.description}</p>
-        <p>${pizza.price}</p>
-        <label htmlFor="quantity">Quantity: </label>
-        <input
-          type="number"
-          name="quantity"
-          min="1"
-          value={this.state.quantity}
-          onChange={this.handleChange}
-        />
-        <div className="nav-buttons">
-          <Link to="/pizzas">
-            <button type="button">Back</button>
-          </Link>
-          <input type="submit" value="Add to Cart" />
-        </div>
-      </form>
+        <form className="single-pizza" onSubmit={this.handleSubmit}>
+          <div className="singleImg">
+            <img src={pizza.imageUrl} />
+          </div>
+          <div id="singleContent">
+            <h1>{pizza.name}</h1>
+            <h3>{pizza.description}</h3>
+            <h4>${pizza.price}</h4>
+          </div>
+          <label htmlFor="quantity">Quantity: </label>
+          <input
+            type="number"
+            name="quantity"
+            min="1"
+            value={this.state.quantity}
+            onChange={this.handleChange}
+          />
+          <div className="nav-buttons">
+            <Link to="/pizzas">
+              <button type="button">Back</button>
+            </Link>
+            <input type="submit" value="Add to Cart" />
+          </div>
+        </form>
     ) : (
       <Cart />
     );

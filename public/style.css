@@ -1,31 +1,3 @@
-/* body {
-  font-family: sans-serif;
-}
-
-a {
-  text-decoration: none;
-}
-
-label {
-  display: block;
-}
-
-nav a {
-  display: inline-block;
-  margin: 1em;
-}
-
-form div {
-  margin: 1em;
-  display: inline-block;
-} */
-
-/*
- * Hi! I'm your stylesheet! I've got some sensible defaults here,
- * but feel free to change me to your heart's content!
- */
-
-
 
 * {
   box-sizing: border-box;
@@ -34,7 +6,6 @@ form div {
 
 body {
   background: linear-gradient(#c0c0c0, #c0c0c0);
-  /* background: linear-gradient(#c0c0c0); */
   height: 100vh;
   padding: 0;
   margin: 0;
@@ -73,13 +44,17 @@ main {
   align-items: stretch; /*stretches all cards same height*/
   width: 350px; /*or whatever size card you want*/
   /* border: 2px solid red; */
-  padding: 10px;
+  padding: 20px;
   height: 10%;
   justify-content: space-between;
+  
+  
 }
 
 .pizzacard-object {
   overflow: hidden;
+  box-shadow: 10px 10px 5px;
+  border-radius: 55px 55px 55px 55px;
 }
 
 .cardtext {
@@ -88,12 +63,13 @@ main {
    display: -webkit-box;
    -webkit-line-clamp: 1; /* number of lines to show */
    -webkit-box-orient: vertical;
-
 }
+
 .my-image{
   height : 350px !important;
   /* width: 318px !important */
   width: 400px !important;
+  
 }
 
 /* .allpizzas > * {
@@ -105,10 +81,31 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  
+ 
+
 }
 
-.single-pizza > * {
+.single-pizza > h1,h2,h3,h4 {
   font-family: monospace;
+}
+.single-pizza > img {
+  width: 50%;
+  border-radius: 55px 55px 55px 55px;
+  box-shadow: 10px 10px 5px;
+  border: 2px;
+}
+.single-pizza {
+  border-radius: 55px 55px 55px 55px;
+  padding-bottom: 10%;
+   
+
+}
+#singleContent {
+  padding-top: 20px;
+  text-align: center;
+ 
+
 }
 
 .nav-buttons {
@@ -155,9 +152,9 @@ main {
 
 }
 
-.view {
+/* .view {
   background-image: url('https://pbs.twimg.com/media/DmFbEO7W0AIci5f?format=jpg&name=large');
-}
+} */
 
 
 
@@ -166,6 +163,7 @@ main {
   padding-right: 10%;
   margin-top: 10%;
   position: absolute;
+  
 }
 
 .carouselslide {
@@ -173,7 +171,6 @@ main {
   height: 500px;
   margin-right: 100px;
   margin-bottom: 20px;
-
 }
 
 .carosuelImage > img {
@@ -202,19 +199,17 @@ main {
   position: absolute;
   box-sizing: border-box;
   align-content: center;
-  /* margin-bottom: 100%; */
   bottom: 35%;
   margin-right: 60%;
   padding-left: 10%;
   
-
 }
 .aboutus {
   font-family: monospace;
 
 }
 
-
+/* home page icon */
 .icon {
   position: absolute;
   box-sizing: border-box;
@@ -233,8 +228,6 @@ main {
   justify-content: center;
   margin-top: 50px;
   padding-bottom: 100%;
-
-
 
 
 }
@@ -289,15 +282,11 @@ main {
   }
     .leaf {
       position: absolute;
-      /* width: 25px;
-      height: 25px; */
       width: 6.25px;
       height: 6.25px;
       background-color: #4caf50;
       z-index: 13;
-      /* border-radius: 100px 0; */
       border-radius: 25px 0;
-      /*box-shadow: 50px 100px #4caf50 , 150px 120px #4caf50 , 130px 40px #4caf50 , 200px 250px #4caf50 , 250px 300px #4caf50 , 300px 100px #4caf50 , 350px 200px #4caf50 , 35px 280px #4caf50 , 150px 320px #4caf50 , 130px 40px #4caf50 , 100px 200px #4caf50 , 250px 60px #4caf50 , 230px 160px #4caf50 */
       box-shadow: 12.5px 25px #4caf50 , 27.5px 30px #4caf50 , 32.5px 10px #4caf50 , 50px 62.5px #4caf50 , 62.5px 75px #4caf50 , 75px 25px #4caf50 , 87.5px 50px #4caf50 , 8.75px 70px #4caf50 , 37.5px 80px #4caf50 , 32.5px 10px #4caf50 , 25px 50px #4caf50 , 62.5px 15px #4caf50 , 57.5px 40px #4caf50
     }
 
@@ -368,7 +357,6 @@ main {
   to {
     height: 25px
   }
-
 }
 
 /* CssCheckout stuff */
@@ -405,11 +393,13 @@ margin-top: 10%;
 #bottominput {
   margin-top: 20px;
 }
-
-
 #babypic {
   height: 500px;
   width: 500px;
+  width: 50%;
+  border-radius: 55px 55px 55px 55px;
+  box-shadow: 10px 10px 5px;
+  border: 2px;
 
 }
 .checkout-success {
@@ -434,3 +424,34 @@ margin-top: 10%;
   bottom: 15%;
   font-family: monospace;
 }
+
+.singleImg > img {
+  margin-left: 25%;
+  width: 50%;
+  border-radius: 55px 55px 55px 55px;
+  box-shadow: 10px 10px 5px;
+  border: 2px;
+}
+
+/* for future admin use */
+/* #editpizzacard {
+   padding: 100px;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 50px;
+  background-color: grey;
+  margin-bottom: 20%;
+}
+.editpizzatotalform {
+  display: flex;
+  flex-direction: column;
+}
+#editpizzabutton {
+  margin-top: 20px;
+  margin-left: 40%;
+  margin-right: 40%;
+} */
+/* .adminSinglePizza {
+  align-content: center;
+  
+} */
