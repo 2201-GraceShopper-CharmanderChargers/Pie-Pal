@@ -6,6 +6,9 @@ module.exports = {
   },
   mode: 'development',
   devtool: 'source-map',
+  resolve: {
+        extensions: ['.js', '.jsx']
+    },
   module: {
     rules: [
       {

@@ -19,6 +19,7 @@ const NavBar = ({ handleClick, isLoggedIn, cartSize, isAdmin }) => (
       {isLoggedIn ? (
         isAdmin ? (
           <div>
+
             <Link className="navLink" to="/adminHome">
               <HomeIcon />
               Home
