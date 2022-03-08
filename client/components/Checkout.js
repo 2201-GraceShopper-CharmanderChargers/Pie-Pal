@@ -187,12 +187,6 @@ class Checkout extends React.Component {
                     <option value="3">Amex</option>
                     <option value="4">Discover</option>
                   </Form.Select>
-
-                  {/* <DropdownButton id="dropdown-basic-button" title="Card" variant="outline-secondary">
-          <Dropdown.Item>Visa</Dropdown.Item>
-          <Dropdown.Item>MasterCard</Dropdown.Item>
-          <Dropdown.Item>Amex</Dropdown.Item>
-        </DropdownButton> */}
                 </Col>
               </Row>
 

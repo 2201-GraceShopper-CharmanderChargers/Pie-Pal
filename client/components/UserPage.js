@@ -2,8 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect, useDispatch } from 'react-redux';
-// import CarouselSlide from './Carousel'
-// import { fetchPizzas } from '../store/pizzas'
 import EditUserPage from './EditUserPage';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';

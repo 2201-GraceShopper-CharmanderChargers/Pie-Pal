@@ -3,6 +3,7 @@ import axios from 'axios';
 // ACTION TYPES
 const SET_PIZZAS = 'SET_PIZZAS';
 const DELETE_PIZZA = 'DELETE_PIZZA';
+const UPDATE_PIZZA = 'UPDATE_PIZZA';
 
 // ACTION CREATORS
 export const setPizzas = (pizzas) => {
@@ -14,6 +15,13 @@ export const setPizzas = (pizzas) => {
 export const deletePizzaAction = (pizza) => {
   return {
     type: DELETE_PIZZA,
+    pizza,
+  };
+};
+
+export const updatePizzaAction = (pizza) => {
+  return {
+    type: UPDATE_PIZZA,
     pizza,
   };
 };
@@ -39,6 +47,15 @@ export const deletePizza = (id) => {
   };
 };
 
+export const updateThisPizza = (pizza) => {
+  return async (dispatch) => {
+    const { data: update } = await axios.put(`/api/pizzas/${pizza.id}`, {
+      pizza,
+    });
+    dispatch(updatePizzaAction(update));
+  };
+};
+
 // Take a look at app/redux/index.js to see where this reducer is
 // added to the Redux store with combineReducers
 export default function pizzasReducer(pizzas = [], action) {
@@ -49,6 +66,11 @@ export default function pizzasReducer(pizzas = [], action) {
     case DELETE_PIZZA: {
       return pizzas.filter((pizza) => {
         return pizza.id !== action.pizza.id;
+      });
+    }
+    case UPDATE_PIZZA: {
+      return pizzas.map((pizza) => {
+        return pizza.id === action.pizza.id ? action.pizza : pizza;
       });
     }
     default:

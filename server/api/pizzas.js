@@ -36,4 +36,14 @@ pizzaRouter.delete('/:pizzaId', async (req, res, next) => {
   }
 });
 
+pizzaRouter.put('/:pizzaId', async (req,res,next) => {
+  try {
+    const pizza = await Pizza.findByPk(req.params.pizzaId);
+    await pizza.update({...req.body.pizza})
+    res.joson(pizza)
+  } catch (error) {
+    console.error(error)
+  }
+})
+
 module.exports = pizzaRouter;

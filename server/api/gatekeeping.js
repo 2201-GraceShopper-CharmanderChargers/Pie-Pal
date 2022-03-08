@@ -12,7 +12,7 @@ const requireToken = async (req, res, next) => {
     const user = await User.findByToken(token);
     req.user = user;
   } catch (error) {
-    next(error);
+    console.error('cannot find user', error)
   }
 };
 
