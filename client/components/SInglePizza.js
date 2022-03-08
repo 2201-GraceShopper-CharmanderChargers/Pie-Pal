@@ -1,9 +1,11 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchPizza } from '../store/singlePizza';
+import { fetchPizza } from '../store/SinglePizza';
 import { addCart } from '../store/cart';
 import Cart from './Cart';
 import { Link } from 'react-router-dom';
+import Card from 'react-bootstrap/Card';
 
 class SinglePizza extends React.Component {
   constructor(props) {
@@ -61,32 +63,36 @@ class SinglePizza extends React.Component {
       <div>
         <form className="single-pizza" onSubmit={this.handleSubmit}>
           <div className="container">
-            <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png" />
+            <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/78c484d8-34a9-40ec-aa54-50ae46cf3855/dekxp8p-c823eeeb-c7a5-4a0d-a106-5819b3729268.jpg/v1/fill/w_1131,h_707,q_70,strp/pizza___charmander_by_sajiro158_dekxp8p-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9ODAwIiwicGF0aCI6IlwvZlwvNzhjNDg0ZDgtMzRhOS00MGVjLWFhNTQtNTBhZTQ2Y2YzODU1XC9kZWt4cDhwLWM4MjNlZWViLWM3YTUtNGEwZC1hMTA2LTU4MTliMzcyOTI2OC5qcGciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.jBrr1gsuBzvZr1fvFBvDWl-ZMCIQtu6N_pJioMp0e34" />
             <h1>Charmander Probably ate the Pizza you were looking for</h1>
           </div>
         </form>
       </div>
     ) : !this.inCart ? (
-      <form className="single-pizza" onSubmit={this.handleSubmit}>
-        <img src={pizza.imageUrl} />
-        <h1>{pizza.name}</h1>
-        <p>{pizza.description}</p>
-        <p>${pizza.price}</p>
-        <label htmlFor="quantity">Quantity: </label>
-        <input
-          type="number"
-          name="quantity"
-          min="1"
-          value={this.state.quantity}
-          onChange={this.handleChange}
-        />
-        <div className="nav-buttons">
-          <Link to="/pizzas">
-            <button type="button">Back</button>
-          </Link>
-          <input type="submit" value="Add to Cart" />
-        </div>
-      </form>
+        <form className="single-pizza" onSubmit={this.handleSubmit}>
+          <div className="singleImg">
+            <img src={pizza.imageUrl} />
+          </div>
+          <div id="singleContent">
+            <h1>{pizza.name}</h1>
+            <h3>{pizza.description}</h3>
+            <h4>${pizza.price}</h4>
+          </div>
+          <label htmlFor="quantity">Quantity: </label>
+          <input
+            type="number"
+            name="quantity"
+            min="1"
+            value={this.state.quantity}
+            onChange={this.handleChange}
+          />
+          <div className="nav-buttons">
+            <Link to="/pizzas">
+              <button type="button">Back</button>
+            </Link>
+            <input type="submit" value="Add to Cart" />
+          </div>
+        </form>
     ) : (
       <Cart />
     );

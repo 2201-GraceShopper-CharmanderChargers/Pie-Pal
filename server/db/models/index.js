@@ -12,11 +12,15 @@ const db = require('../db');
  */
 User.hasMany(Order);
 Order.belongsTo(User);
-OrderItem.belongsTo(Order);
-Order.hasMany(OrderItem);
 
-Pizza.belongsToMany(Order, { through: 'pizzaOrders' });
-Order.belongsToMany(Pizza, { through: 'pizzaOrders' });
+Order.hasMany(OrderItem);
+OrderItem.belongsTo(Order);
+
+Pizza.hasMany(OrderItem);
+OrderItem.belongsTo(Pizza);
+
+// Pizza.belongsToMany(Order, { through: 'pizzaOrders' });
+// Order.belongsToMany(Pizza, { through: 'pizzaOrders' });
 
 /**
  * We'll export all of our models here, so that any time a module needs a model,

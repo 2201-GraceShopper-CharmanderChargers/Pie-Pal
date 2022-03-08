@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
@@ -42,7 +43,7 @@ class PizzaCard extends React.Component {
     console.log('logged', isLoggedIn);
     return (
       <div className="pizzacard">
-        <Card style={{ width: '20rem' }} className="pizzacard-object">
+        <Card style={{ width: '20.5rem' }} className="pizzacard-object">
           <Link to={`/${pizza.id}`}>
             <Card.Img variant="top" src={pizza.imageUrl} className="my-image" />
           </Link>
