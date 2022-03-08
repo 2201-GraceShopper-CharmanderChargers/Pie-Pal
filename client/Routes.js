@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import { connect } from 'react-redux';
 import { me } from './store';
@@ -14,6 +15,7 @@ import {
   CheckoutSuccess,
   AdminPage,
   AdminAllPizzas,
+  AdminSinglePizzaEdit
 } from './components';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -31,6 +33,7 @@ class Routes extends React.Component {
               <Route exact path="/" component={AdminPage} />
               <Route exact path="/adminHome" component={AdminPage} />
               <Route exact path="/adminPizzas" component={AdminAllPizzas} />
+              <Route exact path="/adminPizzas/:id" component={AdminSinglePizzaEdit} />
               <Redirect to="/adminHome" />
             </Switch>
           ) : (
