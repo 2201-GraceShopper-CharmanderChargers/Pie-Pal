@@ -13,10 +13,14 @@ import {
   HomePage,
   Checkout,
   CheckoutSuccess,
+  CheckoutFailure,
   AdminPage,
   AdminAllPizzas,
   AdminSinglePizzaEdit,
+<<<<<<< HEAD
   PageNotFound
+=======
+>>>>>>> 3515ab5a46c41c05789701a4cec53cea88d2ecf7
 } from './components';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -29,6 +33,7 @@ class Routes extends React.Component {
     return (
       <div>
         {isLoggedIn ? (
+<<<<<<< HEAD
           isAdmin ? (
             <Switch>
               <Route exact path="/" component={AdminPage} />
@@ -54,6 +59,24 @@ class Routes extends React.Component {
               <Redirect to="/userhome" />
             </Switch>
           )
+=======
+          <Switch>
+            <Route exact path="/" component={UserHome} />
+            <Route exact path="/userhome" component={UserHome} />
+            <Route exact path="/pizzas" component={AllPizzas} />
+            <Route exact path="/cart" component={Cart} />
+            <Route exact path="/checkout" component={Checkout} />
+            <Route exact path="/checkoutsuccess" component={CheckoutSuccess} />
+            <Route
+              exact
+              path="/checkoutfailure"
+              render={(props) => <CheckoutFailure {...props} />}
+            />
+            <Route exact path="/:pizzaId" component={SinglePizza} />
+            {/* <Route exact path="/*" component={notFoundpage} /> */}
+            <Redirect to="/userhome" />
+          </Switch>
+>>>>>>> 3515ab5a46c41c05789701a4cec53cea88d2ecf7
         ) : (
           <Switch>
             <Route exact path="/" component={HomePage} />
@@ -67,19 +90,6 @@ class Routes extends React.Component {
           </Switch>
         )}
       </div>
-
-      // <Switch>
-      //   {/* Routes placed here are available to all visitors */}
-
-      //   {isLoggedIn && (
-      //     <Switch>
-      //       {/* Routes placed here are only available after logging in */}
-      //       <Route path="/home" component={UserHome} />
-      //     </Switch>
-      //   )}
-      //   {/* Displays our Login component as a fallback */}
-      //   <Route component={Login} />
-      // </Switch>
     );
   }
 }
@@ -102,6 +112,7 @@ const mapDispatch = (dispatch) => {
 // The `withRouter` wrapper makes sure that updates are not blocked
 // when the url changes
 export default withRouter(connect(mapState, mapDispatch)(Routes));
+<<<<<<< HEAD
 
 
 // import React from 'react';
@@ -135,3 +146,5 @@ export default withRouter(connect(mapState, mapDispatch)(Routes));
 //     );
 //   }
 // }
+=======
+>>>>>>> 3515ab5a46c41c05789701a4cec53cea88d2ecf7

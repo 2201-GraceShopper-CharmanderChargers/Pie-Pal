@@ -13,6 +13,7 @@ import SinglePizza from './SinglePizza';
 import Cart from './Cart';
 import HomePage from './HomePage';
 import CheckoutSuccess from './CheckoutSuccess';
+import CheckoutFailure from './CheckoutFailure';
 import Checkout from './Checkout';
 import AdminPage from './Admin/AdminPage';
 import AdminAllPizzas from './Admin/AdminAllPizzas';
@@ -32,6 +33,7 @@ export {
   HomePage,
   Checkout,
   CheckoutSuccess,
+  CheckoutFailure,
   AdminPage,
   AdminAllPizzas,
   UserPage,
