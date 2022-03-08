@@ -71,10 +71,11 @@ class Checkout extends React.Component {
 
   render() {
     const outOfStock = this.state.outOfStock;
-    console.log(outOfStock);
     return this.state.outOfStock.length > 0 ? (
+      //Did the order request too many of one pizza?
       <Redirect to={{ pathname: '/checkoutfailure', state: { outOfStock } }} />
     ) : this.state.submitted ? (
+      //Otherwise, upon submit, redirect to the checkout success page.
       <Redirect to="/checkoutsuccess" />
     ) : (
       <Card id="checkoutcard">
@@ -237,7 +238,6 @@ class Checkout extends React.Component {
             </Form>
           </div>
         </div>
-        {/* <Link to="/checkoutsuccess"> */}
         <Button
           variant="primary"
           type="Submit"
@@ -246,7 +246,6 @@ class Checkout extends React.Component {
         >
           Confirm Order
         </Button>
-        {/* </Link> */}
       </Card>
     );
   }
