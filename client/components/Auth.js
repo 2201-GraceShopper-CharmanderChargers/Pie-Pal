@@ -82,8 +82,7 @@ const AuthForm = (props) => {
   const { name, displayName, handleSubmit, error } = props;
 
   return (
-    <Card>
-      <div className="formContainer">
+    <div className = "auth">
         <Form onSubmit={handleSubmit} name={name || ''} className="container">
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
@@ -94,7 +93,6 @@ const AuthForm = (props) => {
               required
             />
           </Form.Group>
-
           <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Label>Password</Form.Label>
             <Form.Control
@@ -107,10 +105,9 @@ const AuthForm = (props) => {
           <Button variant="primary" type="submit">
             {displayName}
           </Button>
-          {error && error.response && <div> {error.response.data} </div>}
+          {error && error.response && <div>Wrong password or username</div>}
         </Form>
-      </div>
-    </Card>
+    </div>
   );
 };
 

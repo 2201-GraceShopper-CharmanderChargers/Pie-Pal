@@ -1,15 +1,14 @@
 import React from 'react';
 import { Dropdown } from 'react-bootstrap';
+import DropdownButton from 'react-bootstrap/DropdownButton'
 
 const FilterPizzas = (props) => {
   const { pizzaCities, setSelected } = props;
   pizzaCities.unshift('All');
   return (
-    <div>
+    <div className = 'dropdown'>
       <Dropdown>
-        <Dropdown.Toggle variant="success" id="filterdropdown">
-          <p>selection</p>
-        </Dropdown.Toggle>
+        <DropdownButton variant="success" id="filterdropdown" title="Filter Pizza Type by City">
         <Dropdown.Menu>
           {pizzaCities.map((city, i) => {
             return (
@@ -26,6 +25,7 @@ const FilterPizzas = (props) => {
             );
           })}
         </Dropdown.Menu>
+      </DropdownButton>
       </Dropdown>
     </div>
   );
