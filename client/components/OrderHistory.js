@@ -1,7 +1,7 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { getOrderHistory } from '../store';
-import Card from 'react-bootstrap/Card';
+// import React from 'react';
+// import { connect } from 'react-redux';
+// import { getOrderHistory } from '../store';
+// import Card from 'react-bootstrap/Card';
 
 // class OrderHistory extends React.Component{
 //   constructor(props) {

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -95,7 +96,6 @@ const mapDispatch = (dispatch) => {
 };
 
 export default connect(mapState, mapDispatch)(NavBar);
-
 
 // import React from 'react';
 // import { connect } from 'react-redux';

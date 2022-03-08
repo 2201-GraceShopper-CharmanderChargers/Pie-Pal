@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import PizzaCard from './PizzaCard';
 import FilterPizzas from './FilterPizzas';

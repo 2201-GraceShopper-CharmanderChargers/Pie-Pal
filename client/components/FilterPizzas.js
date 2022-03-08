@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import { Dropdown } from 'react-bootstrap';
 
@@ -8,7 +9,7 @@ const FilterPizzas = (props) => {
     <div>
       <Dropdown>
         <Dropdown.Toggle variant="success" id="filterdropdown">
-          <p>selection</p>
+          <p>Choose a Location</p>
         </Dropdown.Toggle>
         <Dropdown.Menu>
           {pizzaCities.map((city, i) => {

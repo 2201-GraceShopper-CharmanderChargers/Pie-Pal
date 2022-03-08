@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import FilterPizzas from '../FilterPizzas';
 import Card from 'react-bootstrap/Card';
@@ -6,6 +7,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { deletePizza } from '../../store/pizzas';
+import history from '../../history';
 
 const AdminAllPizzas = () => {
   const dispatch = useDispatch();
@@ -50,7 +52,7 @@ const AdminAllPizzas = () => {
           return (
             <div key={pizza.id} className="pizzacard">
               <Card style={{ width: '20rem' }} className="pizzacard-object">
-                <Link to={`/${pizza.id}`}>
+                <Link to={`/adminPizzas/${pizza.id}`}>
                   <Card.Img
                     variant="top"
                     src={pizza.imageUrl}
@@ -71,6 +73,9 @@ const AdminAllPizzas = () => {
                   >
                     X
                   </Button>
+                  <Link to={`/adminPizzas/${pizza.id}`}>
+                    <Button variant="warning">Edit</Button>
+                  </Link>
                 </Card.Body>
               </Card>
             </div>

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 const pizzaRouter = require('express').Router();
 const Pizza = require('../db/models/Pizza');
 const Order = require('../db/models/Order');
