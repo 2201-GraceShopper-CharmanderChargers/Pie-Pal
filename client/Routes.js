@@ -13,6 +13,7 @@ import {
   HomePage,
   Checkout,
   CheckoutSuccess,
+  CheckoutFailure,
   AdminPage,
   AdminAllPizzas,
   AdminSinglePizzaEdit,
@@ -35,6 +36,11 @@ class Routes extends React.Component {
             <Route exact path="/cart" component={Cart} />
             <Route exact path="/checkout" component={Checkout} />
             <Route exact path="/checkoutsuccess" component={CheckoutSuccess} />
+            <Route
+              exact
+              path="/checkoutfailure"
+              render={(props) => <CheckoutFailure {...props} />}
+            />
             <Route exact path="/:pizzaId" component={SinglePizza} />
             {/* <Route exact path="/*" component={notFoundpage} /> */}
             <Redirect to="/userhome" />
