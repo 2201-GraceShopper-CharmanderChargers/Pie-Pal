@@ -1,7 +1,10 @@
 {
   "name": "pizzashopperapp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
+  "engines": {
+    "node": "~12.11.1"
+  },
   "main": "index.js",
   "scripts": {
     "build": "webpack -w",
