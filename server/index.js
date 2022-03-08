@@ -24,3 +24,6 @@ init();
 // webpack
 // "build": "webpack -w",
 //     "build:dev": "npm run build -- --watch --mode=development",
+
+// react version 
+//16.14.0
