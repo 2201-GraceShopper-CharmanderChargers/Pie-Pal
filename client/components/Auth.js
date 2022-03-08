@@ -11,8 +11,7 @@ const AuthForm = (props) => {
   const { name, displayName, handleSubmit, error } = props;
 
   return (
-    <Card>
-      <div className="formContainer">
+    <div className = "auth">
         <Form onSubmit={handleSubmit} name={name || ''} className="container">
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
@@ -23,7 +22,6 @@ const AuthForm = (props) => {
               required
             />
           </Form.Group>
-
           <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Label>Password</Form.Label>
             <Form.Control
@@ -36,10 +34,9 @@ const AuthForm = (props) => {
           <Button variant="primary" type="submit">
             {displayName}
           </Button>
-          {error && error.response && <div> {error.response.data} </div>}
+          {error && error.response && <div>Wrong password or username</div>}
         </Form>
-      </div>
-    </Card>
+    </div>
   );
 };
 
@@ -90,6 +87,8 @@ AuthForm.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
   error: PropTypes.object,
 };
+<<<<<<< HEAD
+=======
 
 
 
@@ -165,3 +164,4 @@ AuthForm.propTypes = {
 
 // export const Login = connect(mapLogin, mapDispatch)(AuthForm);
 // export const Signup = connect(mapSignup, mapDispatch)(AuthForm);
+>>>>>>> 7381c1bafe8cd00fde2a0744e0abdd7a9ec3e488
