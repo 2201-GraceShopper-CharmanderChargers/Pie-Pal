@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -102,13 +103,14 @@ class Cart extends React.Component {
                 <td />
               </tr>
             </tbody>
-          </Table>
+            </Table>
+            <Link to="/checkout">
+            <Button id="checkout" variant="success">Checkout!</Button>
+          </Link>
         </div>
         <div id="checkout-section">
           <div />
-          <Link to="/checkout">
-            <Button variant="success">Checkout!</Button>
-          </Link>
+
         </div>
       </div>
     );

@@ -27,6 +27,7 @@ form div {
 
 
 
+
 * {
   box-sizing: border-box;
   font-family: arial, sans-serif;
@@ -44,13 +45,14 @@ body {
 
 nav {
   align-items: center;
-  background-color: #333333;
-  color: #c0c0c0;
+  background-color: #09ac47;
   display: flex;
   height: 80px;
   padding: 10px;
-  margin-bottom: 70px;
+  margin-bottom: 10px;
 }
+
+
 
 main {
   align-items: center;
@@ -59,6 +61,7 @@ main {
   justify-content: center;
 }
 
+
 .allpizzas {
   display: flex;
   flex-direction: row;
@@ -66,8 +69,8 @@ main {
   justify-content: space-around;
   align-content: center;
   height: 30%;
-
 }
+
 .pizzacard {
   align-content: center;
   align-items: stretch; /*stretches all cards same height*/
@@ -76,6 +79,23 @@ main {
   padding: 10px;
   height: 10%;
   justify-content: space-between;
+}
+
+.auth {
+  padding: 100px;
+  margin-left: 20%;
+  margin-top:10%;
+  margin-right: 20%;
+  background-color: white;
+  padding: 2%;
+  border-radius: 25px;
+}
+
+.dropdown {
+
+  margin-left: 20%;
+  margin-right: 20%;
+  padding: 1%;
 }
 
 .pizzacard-object {
@@ -123,10 +143,13 @@ main {
 }
 
 .cart {
-  display: flex;
-  align-content: center;
-  flex-direction: column;
-  margin: 0 700px 0 700px;
+  padding: 100px;
+  margin-left: 20%;
+  margin-top:10%;
+  margin-right: 20%;
+  background-color: white;
+  padding: 2%;
+  border-radius: 25px;
 }
 
 .cart-item-quantity {
@@ -195,15 +218,22 @@ main {
 
 .homeheader {
   padding-bottom: 5%;
+  font-family: monospace;
 
 }
 .hometext {
   position: absolute;
   box-sizing: border-box;
+  align-content: center;
   /* margin-bottom: 100%; */
-  bottom: 55%;
+  bottom: 35%;
   margin-right: 60%;
   padding-left: 10%;
+  
+
+}
+.aboutus {
+  font-family: monospace;
 
 }
 
@@ -211,13 +241,13 @@ main {
 .icon {
   position: absolute;
   box-sizing: border-box;
-  bottom: 55%;
+  bottom: 30%;
   margin-right: 20%;
   margin-left: 20%;
 }
 
 .icon > .pizza-container {
-  padding-bottom: 50%;
+  padding-bottom: 10%;
 }
 
 .pizza-container {
@@ -270,7 +300,7 @@ main {
     transform: translateX(3px) translateY(-1px);
     animation: chorreo 4s ease-out infinite;
     margin-left: 50%;
-    margin-bottom: 50%;
+    margin-bottom: 10%;
 }
 
   .basil {
@@ -408,4 +438,22 @@ margin-top: 10%;
 .checkout-success {
   align-content: center;
   margin-left: 35%;
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+#starthere{
+  position: absolute;
+  margin-left: 7%;
+  bottom: 15%;
+  font-family: monospace;
 }

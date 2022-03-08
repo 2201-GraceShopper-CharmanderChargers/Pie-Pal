@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -18,6 +19,7 @@ const NavBar = ({ handleClick, isLoggedIn, cartSize, isAdmin }) => (
       {isLoggedIn ? (
         isAdmin ? (
           <div>
+
             <Link className="navLink" to="/adminHome">
               <HomeIcon />
               Home
@@ -95,7 +97,6 @@ const mapDispatch = (dispatch) => {
 };
 
 export default connect(mapState, mapDispatch)(NavBar);
-
 
 // import React from 'react';
 // import { connect } from 'react-redux';
