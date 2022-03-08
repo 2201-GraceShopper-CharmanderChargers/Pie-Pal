@@ -48,6 +48,8 @@ router.post('/', async (req, res, next) => {
       imageUrl: newPizza.imageUrl,
       quantity: newPizza.quantity,
     });
+    //Associate the order item with its pizza item. Use this to adjust quantity of pizzas upon checkout.
+    newOrderItem.setPizza(newPizza.id);
 
     //If this OrderItem is created by a registered user, assign it to its pending order (cart).
     if (user) {

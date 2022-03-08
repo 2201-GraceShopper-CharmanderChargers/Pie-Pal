@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Order } = require('../db/models');
+const { User, Order, Pizza } = require('../db/models');
 module.exports = router;
 
 //GET /api/orders/cart?userId={int}
@@ -48,6 +48,14 @@ router.put('/:orderId', async (req, res, next) => {
   try {
     const oldOrder = await Order.findByPk(req.params.orderId);
     const newOrder = await oldOrder.update(req.body);
+
+    //Decrease the quantity of each pizza by the quantity of the order item.
+    const orderItems = await newOrder.getOrderItems();
+    orderItems.map(async (item) => {
+      const pizza = await item.getPizza();
+      const newQuantity = pizza.quantity - item.quantity;
+      await pizza.update({ quantity: newQuantity });
+    });
     res.send(newOrder);
   } catch (error) {
     next(error);
