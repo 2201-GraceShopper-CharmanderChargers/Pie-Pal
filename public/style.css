@@ -20,7 +20,7 @@ nav {
   display: flex;
   height: 80px;
   padding: 10px;
-  margin-bottom: 70px;
+  /* margin-bottom: 70px; */
 }
 
 main {
@@ -155,10 +155,72 @@ main {
 /* .view {
   background-image: url('https://pbs.twimg.com/media/DmFbEO7W0AIci5f?format=jpg&name=large');
 } */
-
-
-
 .carousel {
+  display: block;
+
+  width: 100%;
+  border: 2px;
+  height: 10%;
+}
+.carosuelImage > img {
+  display: block;
+  width: 100%;
+  margin-right: 100px;
+  /* opacity: .8; */
+  /* margin-bottom: 20px; */
+}
+.carouselslide {
+  display: block;
+  width: 100px;
+  height: 800px;
+
+}
+.homeheader {
+ padding-bottom: 5%;
+  font-family: monospace;
+}
+
+.hometext {
+  position: absolute;
+  /* left: 5%; */
+  z-index: 20;
+  color:black;
+  text-shadow: 0 1px 2px rgba(1,1,1,5);
+   /* text-shadow: 10px 10px 5px rgba(1,1,1,5); */
+  box-sizing: border-box;
+  text-align: center;
+  bottom: 40%;
+  margin-right: 40%;
+  margin-left: 30%;
+  /* padding-left: 5%; */
+  background-color: grey;
+  border-radius: 55px 55px 55px 55px;
+  box-shadow: 10px 10px 5px;
+  border: 2px;
+}
+#starthere{
+  position: absolute;
+  margin-left: 100%;
+  font-family: monospace;
+  /* text-shadow: 10px 10px 5px rgba(1,1,1,5); */
+  text-shadow: 0 1px 2px rgba(1,1,1,5);
+  padding: 10px;
+  z-index: 20;
+  color:black;
+  background-color: grey;
+  border-radius: 55px 55px 55px 55px;
+  box-shadow: 10px 10px 5px;
+  border: 2px;
+  left: 45%;
+  margin-bottom: 21%
+}
+.formContainer {
+  padding: 110 0 50 0;
+}
+
+
+
+/* .carousel {
   margin-left: 30%;
   padding-right: 10%;
   margin-top: 10%;
@@ -179,18 +241,16 @@ main {
   border-radius: 55px 55px 55px 55px;
   box-shadow: 10px 10px 5px;
   border: 2px;
-}
+} */
 
-.formContainer {
-  padding: 110 0 50 0;
-}
+
 
 
 
 /* Css home page stuff */
 
 
-.homeheader {
+/* .homeheader {
   padding-bottom: 5%;
   font-family: monospace;
 
@@ -203,23 +263,28 @@ main {
   margin-right: 60%;
   padding-left: 10%;
   
-}
+} */
 .aboutus {
   font-family: monospace;
-
 }
 
 /* home page icon */
-.icon {
+.icon > * {
   position: absolute;
   box-sizing: border-box;
-  bottom: 30%;
+  bottom: 70%;
   margin-right: 20%;
   margin-left: 20%;
-}
+  z-index: 20;
+  color:black;
+  left: 50%
+ 
+} 
 
 .icon > .pizza-container {
+   position: absolute;
   padding-bottom: 10%;
+  
 }
 
 .pizza-container {
@@ -228,12 +293,14 @@ main {
   justify-content: center;
   margin-top: 50px;
   padding-bottom: 100%;
+  
 
 
 }
 
 .pizza {
-  position: relative;
+  
+   position: absolute;
   width: 100px;
   height: 100px;
   background-color: #ffeb3b;
@@ -247,12 +314,13 @@ main {
 
   .pizza:before {
     content: '';
+   
     position: absolute;
     width: 62.5px;
     height: 66.25px;
     margin-top: 15%;
     margin-right: 100%;
-    background-color: #c0c0c0;
+    
     transform: rotate(45deg);
     left: 66%;
     z-index: 20;
@@ -326,7 +394,7 @@ main {
   }
   .slices {
     display: flex;
-    position: relative;
+     position: absolute;
     width: 100%;
     height: 100%;
     justify-content: center;

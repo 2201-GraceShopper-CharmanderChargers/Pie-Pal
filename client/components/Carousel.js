@@ -23,11 +23,11 @@ const CarouselSlide = () => {
   // const {pizzas} = props
   return (
     <div className="carousel">
-      <Carousel fade controls={false}>
+      <Carousel fade controls={false} pause={false} > 
         {pizzas.map((pizza) => {
           return (
             <Carousel.Item
-              interval={1000}
+              interval={3000}
               className="carosuelImage"
               key={pizza.id}
             >
