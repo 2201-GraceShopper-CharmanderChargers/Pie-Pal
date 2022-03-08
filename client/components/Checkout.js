@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
+import { Redirect } from 'react-router';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
@@ -15,6 +16,10 @@ import axios from 'axios';
 class Checkout extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      outOfStock: [],
+      submitted: false,
+    };
     this.processOrder = this.processOrder.bind(this);
   }
 
@@ -22,21 +27,32 @@ class Checkout extends React.Component {
     const user = this.props.user;
     try {
       if (user) {
+        //Get the cart order.
         const { data: userOrder } = await axios.get(
           `/api/orders/cart?userId=${user.id}`
         );
+
+        //Send the new status to update the order.
         const newStatus = { status: 'Complete' };
-        const { data: newOrder } = await axios.put(
+        const { data: response } = await axios.put(
           `/api/orders/${userOrder.id}`,
           newStatus
         );
-        if (newOrder) {
-           await axios.post('/api/orders', {
+        const { newOrder, outOfStock } = response;
+
+        //If anything is out of stock, get those items and don't proceed.
+        if (outOfStock.length > 0) {
+          this.setState({ outOfStock: outOfStock, submitted: true });
+        } else if (newOrder) {
+          //Else, create a new pending order.
+          await axios.post('/api/orders', {
             userId: user.id,
           });
-          this.props.getCart([]);
+          this.props.getCart([]); //Clear the store cart.
+          this.setState({ submitted: true });
         }
       } else {
+        //If a guest checks out. Not currently in use.
         const items = this.props.cart;
         const { data: guestOrder } = await axios.post('/api/orders', { items });
         const newStatus = { status: 'Complete' };
@@ -54,7 +70,13 @@ class Checkout extends React.Component {
   }
 
   render() {
-    return (
+    const outOfStock = this.state.outOfStock;
+    console.log(outOfStock);
+    return this.state.outOfStock.length > 0 ? (
+      <Redirect to={{ pathname: '/checkoutfailure', state: { outOfStock } }} />
+    ) : this.state.submitted ? (
+      <Redirect to="/checkoutsuccess" />
+    ) : (
       <Card id="checkoutcard">
         <div id="totalform">
           <div className="shippingaddress">
@@ -215,16 +237,16 @@ class Checkout extends React.Component {
             </Form>
           </div>
         </div>
-        <Link to="/checkoutsuccess">
-          <Button
-            variant="primary"
-            type="Submit"
-            size="lg"
-            onClick={this.processOrder}
-          >
-            Confirm Order
-          </Button>
-        </Link>
+        {/* <Link to="/checkoutsuccess"> */}
+        <Button
+          variant="primary"
+          type="Submit"
+          size="lg"
+          onClick={this.processOrder}
+        >
+          Confirm Order
+        </Button>
+        {/* </Link> */}
       </Card>
     );
   }

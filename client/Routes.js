@@ -13,9 +13,10 @@ import {
   HomePage,
   Checkout,
   CheckoutSuccess,
+  CheckoutFailure,
   AdminPage,
   AdminAllPizzas,
-  AdminSinglePizzaEdit
+  AdminSinglePizzaEdit,
 } from './components';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -33,7 +34,11 @@ class Routes extends React.Component {
               <Route exact path="/" component={AdminPage} />
               <Route exact path="/adminHome" component={AdminPage} />
               <Route exact path="/adminPizzas" component={AdminAllPizzas} />
-              <Route exact path="/adminPizzas/:id" component={AdminSinglePizzaEdit} />
+              <Route
+                exact
+                path="/adminPizzas/:id"
+                component={AdminSinglePizzaEdit}
+              />
               <Redirect to="/adminHome" />
             </Switch>
           ) : (
@@ -47,6 +52,11 @@ class Routes extends React.Component {
                 exact
                 path="/checkoutsuccess"
                 component={CheckoutSuccess}
+              />
+              <Route
+                exact
+                path="/checkoutfailure"
+                render={(props) => <CheckoutFailure {...props} />}
               />
               <Route exact path="/:pizzaId" component={SinglePizza} />
               {/* <Route exact path="/*" component={notFoundpage} /> */}
@@ -101,7 +111,6 @@ const mapDispatch = (dispatch) => {
 // The `withRouter` wrapper makes sure that updates are not blocked
 // when the url changes
 export default withRouter(connect(mapState, mapDispatch)(Routes));
-
 
 // import React from 'react';
 // import { connect } from 'react-redux';

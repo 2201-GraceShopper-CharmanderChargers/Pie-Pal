@@ -47,16 +47,36 @@ router.post('/', async (req, res, next) => {
 router.put('/:orderId', async (req, res, next) => {
   try {
     const oldOrder = await Order.findByPk(req.params.orderId);
-    const newOrder = await oldOrder.update(req.body);
 
     //Decrease the quantity of each pizza by the quantity of the order item.
-    const orderItems = await newOrder.getOrderItems();
-    orderItems.map(async (item) => {
-      const pizza = await item.getPizza();
-      const newQuantity = pizza.quantity - item.quantity;
-      await pizza.update({ quantity: newQuantity });
-    });
-    res.send(newOrder);
+    //1. Get the order items and the corresponding pizza quantities.
+    const orderItems = await oldOrder.getOrderItems();
+    let pizzaQuantities = await Promise.all(
+      orderItems.map(async (item) => {
+        const pizza = await item.getPizza();
+        return pizza.quantity;
+      })
+    );
+
+    //Filter the items that cannot satisfy the order item quantity.
+    let outOfStock = orderItems
+      .filter((item, i) => item.quantity > pizzaQuantities[i])
+      .map((item) => item.name);
+
+    //If none are out of stock, process the order.
+    let newOrder;
+    if (outOfStock.length === 0) {
+      await orderItems.map(async (item) => {
+        const pizza = await item.getPizza();
+        const newQuantity = pizza.quantity - item.quantity;
+        await pizza.update({ quantity: newQuantity });
+      });
+      newOrder = await oldOrder.update(req.body);
+    }
+
+    //Respond with the newOrder (if any) and the array of out-of-stock pizza names (if any)
+    let response = { newOrder, outOfStock };
+    res.send(response);
   } catch (error) {
     next(error);
   }
