@@ -87,8 +87,6 @@ AuthForm.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
   error: PropTypes.object,
 };
-<<<<<<< HEAD
-=======
 
 
 
@@ -164,4 +162,3 @@ AuthForm.propTypes = {
 
 // export const Login = connect(mapLogin, mapDispatch)(AuthForm);
 // export const Signup = connect(mapSignup, mapDispatch)(AuthForm);
->>>>>>> 7381c1bafe8cd00fde2a0744e0abdd7a9ec3e488

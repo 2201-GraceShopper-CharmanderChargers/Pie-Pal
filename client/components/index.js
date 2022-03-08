@@ -18,6 +18,7 @@ import AdminPage from './Admin/AdminPage';
 import AdminAllPizzas from './Admin/AdminAllPizzas';
 import UserPage from './UserPage';
 import { AdminSinglePizzaEdit } from './Admin/AdminSinglePizza';
+import PageNotFound from './PageNotFound'
 
 // import LoginForm from './LoginForm';
 // import SignUpForm from './SignUpForm';
@@ -35,4 +36,5 @@ export {
   AdminAllPizzas,
   UserPage,
   AdminSinglePizzaEdit,
+  PageNotFound
 };

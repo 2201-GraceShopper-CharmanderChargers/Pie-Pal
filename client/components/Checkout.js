@@ -216,11 +216,11 @@ class Checkout extends React.Component {
           </div>
         </div>
         <Link to="/checkoutsuccess">
-          <Button
+            <Button
             variant="primary"
             type="Submit"
             size="lg"
-            onClick={this.processOrder}
+            onClick={this.processOrder, () => console.log(this.state)}
           >
             Confirm Order
           </Button>

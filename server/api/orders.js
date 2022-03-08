@@ -70,21 +70,38 @@ router.put('/:orderId', async (req, res, next) => {
 //   }
 // })
 
+// router.get('/', async (req, res, next) => {
+//   try {
+//     if (req.query.userId) {
+//       const userId = req.query.userId;
+//       const user = await User.findByPk(userId);
+//       const pendingOrders = await user.getOrders({ where: { status: 'Pending'}});
+//       const cart = pendingOrders[0];
+//       res.send(cart);
+//     } else {
+//       const orders = await Order.findAll();
+//       res.send(orders);
+//     }
+//   } catch (error) {
+//     next(error);
+//   }
+// });
+
 // helper function for grabbing previous orders
 
-async function getCompletedOrders(userId) {
-  try {
-    const orders = await Order.findAll({
-      where: {
-        id: userId,
-        status: 'Completed',
-      },
-    });
-    return orders;
-  } catch (error) {
-    console.error(error);
-  }
-}
+// async function getCompletedOrders(userId) {
+//   try {
+//     const orders = await Order.findAll({
+//       where: {
+//         id: userId,
+//         status: 'Completed',
+//       },
+//     });
+//     return orders;
+//   } catch (error) {
+//     console.error(error);
+//   }
+// }
 
 // router.get('/orderHistory', async function (req, res, next) {
 //   try {
