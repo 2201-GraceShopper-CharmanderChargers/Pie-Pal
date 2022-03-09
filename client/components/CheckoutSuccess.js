@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card'
 
 const CheckoutSuccess = (props) => {
   const handleClick = () => {
@@ -13,20 +14,28 @@ const CheckoutSuccess = (props) => {
   };
 
   return (
-    <div className="checkout-success">
-      <img
+    <div className = "checkoutSuccess" >
+
+    <Card className="text-center">
+      <Card.Body>
+        <img
         id="babypic"
         src="https://pbs.twimg.com/media/DXYvb89VwAIn7tH?format=jpg&name=4096x4096"
         alt="tank you"
       />
-      <div>
+        <Card.Text>
         <h1>Order confirmed</h1>
         <h2>Your Pizzas are on the way!</h2>
         <h3>Your order number is {randomNum()}</h3>
-        <Button variant="primary" onClick={handleClick}>
+        </Card.Text>
+          <Button variant="primary" onClick={handleClick}>
           Get more pizzas
         </Button>
-      </div>
+      </Card.Body>
+    </Card>
+
+
+
     </div>
   );
 };

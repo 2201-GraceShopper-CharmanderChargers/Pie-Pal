@@ -34,6 +34,7 @@ const AuthForm = (props) => {
         <Button variant="primary" type="submit">
           {displayName}
         </Button>
+       
         {error && error.response && <div>Wrong password or username</div>}
       </Form>
     </div>

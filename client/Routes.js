@@ -49,7 +49,7 @@ class Routes extends React.Component {
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/:pizzaId" component={SinglePizza} />
-            {/* <Route path="/*" component={notFoundpage} /> */}
+            {/* <Route path="/*" component={PageNotFound} /> */}
             <Redirect to="/home" />
           </Switch>
         )}

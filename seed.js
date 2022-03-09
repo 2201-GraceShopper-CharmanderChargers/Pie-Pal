@@ -88,7 +88,7 @@ const fakePizzas = [
   },
   {
     name: 'nutella',
-    description: 'goodshit',
+    description: 'cheese so soft its almost like nutella',
     price: 9.99,
     quantity: 3,
     imageUrl:
@@ -97,7 +97,7 @@ const fakePizzas = [
   },
   {
     name: 'the burn',
-    description: 'burnt shit',
+    description: 'some people like it burnt, others like it really burnt',
     price: 90.0,
     quantity: 3,
     imageUrl:

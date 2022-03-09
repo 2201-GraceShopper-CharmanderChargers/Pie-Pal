@@ -104,9 +104,15 @@ class Cart extends React.Component {
               </tr>
             </tbody>
             </Table>
-            <Link to="/checkout">
-            <Button id="checkout" variant="success">Checkout!</Button>
-          </Link>
+            {
+            this.props.cart.length > 0 ? <Link to="/checkout">
+              <Button to="/checkout" id="checkout" variant="success">Checkout!</Button>
+              </Link>
+                :
+              <Button variant="success" disabled>
+                Please add some pizza first!
+              </Button>
+            }
         </div>
         <div id="checkout-section">
           <div />
