@@ -51,6 +51,9 @@ class Checkout extends React.Component {
 
       //If anything is out of stock, get those items and don't proceed.
       if (outOfStock.length > 0) {
+        if (!this.props.isLoggedIn) {
+          await axios.delete(`/api/orders/${order.id}`);
+        }
         this.setState({ outOfStock: outOfStock, submitted: true });
       } else {
         //Else, create a new pending order.

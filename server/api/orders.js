@@ -84,6 +84,16 @@ router.put('/:orderId', async (req, res, next) => {
   }
 });
 
+router.delete('/:orderId', async (req, res, next) => {
+  try {
+    const oldOrder = await Order.findByPk(req.params.orderId);
+    const status = await oldOrder.destroy();
+    res.send(status);
+  } catch (error) {
+    next(error);
+  }
+});
+
 //DEPRECATED. NOW WE GET THE CART ITEMS FROM /api/orderItems?userId={int}
 // GET /api/orders?userId={int}
 
