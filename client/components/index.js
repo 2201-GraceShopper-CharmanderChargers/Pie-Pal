@@ -4,7 +4,7 @@
  * having to figure out which file they belong to!
  */
 export { default as NavBar } from './NavBar';
-export { default as UserHome } from './UserPage';
+export { default as UserHome } from './Admin/UserPage';
 // export { Login, Signup } from './auth-form'
 
 import { Login, Signup } from './Auth';
@@ -15,10 +15,7 @@ import HomePage from './HomePage';
 import CheckoutSuccess from './CheckoutSuccess';
 import CheckoutFailure from './CheckoutFailure';
 import Checkout from './Checkout';
-import AdminPage from './Admin/AdminPage';
-import AdminAllPizzas from './Admin/AdminAllPizzas';
-import UserPage from './UserPage';
-import { AdminSinglePizzaEdit } from './Admin/AdminSinglePizza';
+
 
 // import LoginForm from './LoginForm';
 // import SignUpForm from './SignUpForm';
@@ -32,9 +29,4 @@ export {
   HomePage,
   Checkout,
   CheckoutSuccess,
-  CheckoutFailure,
-  AdminPage,
-  AdminAllPizzas,
-  UserPage,
-  AdminSinglePizzaEdit,
 };

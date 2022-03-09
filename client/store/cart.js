@@ -104,8 +104,20 @@ export default function cartReducer(state = [], action) {
       return action.cart;
     }
     case ADD_CART: {
-      const newCart = [...state, action.item];
-      return newCart;
+      const prevOrderItems = state.map((item) => item.id);
+      if (prevOrderItems.includes(action.item.id)) {
+        const newOrderItems = state.map((item) => {
+          if (item.id === action.item.id) {
+            return action.item;
+          } else {
+            return item;
+          }
+        });
+        return newOrderItems;
+      } else {
+        const newCart = [...state, action.item];
+        return newCart;
+      }
     }
     case UPDATE_CART: {
       const newCart = state.map((item) => {
