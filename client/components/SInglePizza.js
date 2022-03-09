@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchPizza } from '../store/singlePizza';
+import { fetchPizza } from '../store/singlepizza';
 import { addCart } from '../store/cart';
 import Cart from './Cart';
 import { Link } from 'react-router-dom';
