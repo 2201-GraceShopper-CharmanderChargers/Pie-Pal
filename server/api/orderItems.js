@@ -44,7 +44,7 @@ router.post('/', async (req, res, next) => {
     let cartItems;
     let cart;
     //If there's a user, get the cart and associated items from their pending order.
-    if (user === undefined) {
+    if (user !== undefined) {
       const userModel = await User.findByPk(user.id);
       const pendingOrders = await userModel.getOrders({
         where: { status: 'Pending' },
