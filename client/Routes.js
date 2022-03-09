@@ -12,6 +12,7 @@ import {
   HomePage,
   Checkout,
   CheckoutSuccess,
+  CheckoutFailure
 } from './components';
 import 'bootstrap/dist/css/bootstrap.min.css';
 

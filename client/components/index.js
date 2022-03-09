@@ -29,4 +29,5 @@ export {
   HomePage,
   Checkout,
   CheckoutSuccess,
+  CheckoutFailure,
 };
