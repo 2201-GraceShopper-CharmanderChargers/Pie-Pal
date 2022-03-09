@@ -9,9 +9,9 @@ import axios from 'axios';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-export const AdminSinglePizzaEdit = (props) => {
+export const AdminOnePizzaEdit = (props) => {
   const [pizza, setPizza] = useState({});
-  const [newPizza, editPizza] = useState({})
+  const [newPizza, editPizza] = useState({});
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -30,12 +30,12 @@ export const AdminSinglePizzaEdit = (props) => {
   useEffect(() => {
     async function editing() {
       const res = await axios.put(`/api/pizzas/${pizza.id}`, {
-        pizza
+        pizza,
       });
-      const replace = res.data
+      const replace = res.data;
     }
     editing();
-  }, [])
+  }, []);
 
   const handleEdit = (event) => {
     event.preventDefault();
@@ -43,7 +43,7 @@ export const AdminSinglePizzaEdit = (props) => {
   };
 
   return (
-    <div className="adminSinglePizza">
+    <div className="adminOnePizza">
       <img src={pizza.imageUrl} />
       <Card id="editpizzacard">
         <Form onSubmit={() => editPizza()} className="editpizzatotalform">
@@ -117,5 +117,3 @@ export const AdminSinglePizzaEdit = (props) => {
     </div>
   );
 };
-
-
