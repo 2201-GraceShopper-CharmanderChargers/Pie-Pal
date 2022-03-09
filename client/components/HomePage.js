@@ -53,7 +53,10 @@ class HomePage extends React.Component {
             )}
 
 
-            <div className="icon">
+          <div className="icon">
+            <h3 id="starthere">
+              Start Here <i class="arrow right"></i>
+            </h3>
               <Link to="/pizzas">
                 <div className="pizza-container">
                   <div className="pizza" id="hvr-sink">

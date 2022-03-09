@@ -23,10 +23,10 @@ const NavBar = ({ handleClick, isLoggedIn, cartSize, isAdmin }) => (
             fontFamily: 'monospace',
             fontSize: '50px'
           }} to="/pizzas"
-          ><PieChartOutlineIcon />
+          ><PieChartOutlineIcon style={{ fontSize: 40 }} />
             PIE-PAL
           </Link>
-            <Link className="navLink" id="home" to="/userhome">
+            <Link className="navLink" id="home" to="/home">
               <HomeIcon />
               Home
             </Link>
@@ -54,7 +54,7 @@ const NavBar = ({ handleClick, isLoggedIn, cartSize, isAdmin }) => (
             fontFamily: 'monospace',
             fontSize: '50px'
           }} to="/pizzas"
-          ><PieChartOutlineIcon />
+          ><PieChartOutlineIcon style={{ fontSize: 40 }} />
             PIE-PAL
           </Link>
           <Link className="navLink" to="/home">
