@@ -7,12 +7,13 @@ import {
   Login,
   Signup,
   AllPizzas,
-  SinglePizza,
+  OnePizza,
   Cart,
   HomePage,
   Checkout,
   CheckoutSuccess,
   CheckoutFailure,
+  PageNotFound,
 } from './components';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -38,7 +39,7 @@ class Routes extends React.Component {
               render={(props) => <CheckoutFailure {...props} />}
             />
             <Route exact path="/:pizzaId" component={SinglePizza} />
-            {/* <Route exact path="/*" component={notFoundpage} /> */}
+            <Route exact path="/*" component={PageNotFound} />
             <Redirect to="/home" />
           </Switch>
         ) : (
@@ -56,7 +57,7 @@ class Routes extends React.Component {
               path="/checkoutfailure"
               render={(props) => <CheckoutFailure {...props} />}
             />
-            <Route exact path="/:pizzaId" component={SinglePizza} />
+            <Route exact path="/:pizzaId" component={OnePizza} />
             <Redirect to="/home" />
           </Switch>
         )}

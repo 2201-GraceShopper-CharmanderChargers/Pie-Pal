@@ -7,7 +7,7 @@ import Card from 'react-bootstrap/Card';
 import { Row, Col, FloatingLabel, InputGroup } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { getCart } from '../store/cart';
+import { clearCart } from '../store/cart';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 
@@ -51,6 +51,9 @@ class Checkout extends React.Component {
 
       //If anything is out of stock, get those items and don't proceed.
       if (outOfStock.length > 0) {
+        if (!this.props.isLoggedIn) {
+          await axios.delete(`/api/orders/${order.id}`);
+        }
         this.setState({ outOfStock: outOfStock, submitted: true });
       } else {
         //Else, create a new pending order.
@@ -59,7 +62,7 @@ class Checkout extends React.Component {
             userId: user.id,
           });
         }
-        this.props.getCart([]); //Clear the store cart.
+        this.props.clearCart([]); //Clear the store cart.
         this.setState({ submitted: true });
       }
     } catch (error) {
@@ -253,7 +256,7 @@ const mapState = (state) => {
 
 const mapDispatch = (dispatch) => {
   return {
-    getCart: (cart) => dispatch(getCart(cart)),
+    clearCart: () => dispatch(clearCart()),
   };
 };
 
