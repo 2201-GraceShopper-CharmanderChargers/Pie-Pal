@@ -20,8 +20,12 @@ router.get('/', async (req, res, next) => {
 //On login, retrieve the cart items associated with the user.
 router.get('/cart', async (req, res, next) => {
   try {
-    if (req.query.userId) {
-      const userId = req.query.userId;
+    const userId = Number(req.query.userId);
+    if (userId === -1) {
+      //Enters when the guest adds to cart.
+      const items = await OrderItem.findAll({ where: { orderId: null } });
+      res.send(items);
+    } else {
       const user = await User.findByPk(userId);
       const pendingOrders = await user.getOrders({
         where: { status: 'Pending' },
@@ -44,7 +48,7 @@ router.post('/', async (req, res, next) => {
     let cartItems;
     let cart;
     //If there's a user, get the cart and associated items from their pending order.
-    if (user !== undefined) {
+    if (user.id) {
       const userModel = await User.findByPk(user.id);
       const pendingOrders = await userModel.getOrders({
         where: { status: 'Pending' },

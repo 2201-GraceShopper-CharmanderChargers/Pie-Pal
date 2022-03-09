@@ -50,9 +50,7 @@ router.put('/:orderId', async (req, res, next) => {
     const oldOrder = await Order.findByPk(req.params.orderId);
     //Decrease the quantity of each pizza by the quantity of the order item.
     //1. Get the order items and the corresponding pizza quantities.
-    console.log('oldOrder: ', oldOrder);
     let orderItems = await oldOrder.getOrderItems();
-    console.log('orderItems: ', orderItems);
     let pizzaQuantities = await Promise.all(
       orderItems.map(async (item) => {
         const pizza = await item.getPizza();

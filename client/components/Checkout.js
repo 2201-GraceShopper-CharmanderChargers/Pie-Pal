@@ -7,7 +7,7 @@ import Card from 'react-bootstrap/Card';
 import { Row, Col, FloatingLabel, InputGroup } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { getCart } from '../store/cart';
+import { clearCart } from '../store/cart';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 
@@ -62,7 +62,7 @@ class Checkout extends React.Component {
             userId: user.id,
           });
         }
-        this.props.getCart([]); //Clear the store cart.
+        this.props.clearCart([]); //Clear the store cart.
         this.setState({ submitted: true });
       }
     } catch (error) {
@@ -256,7 +256,7 @@ const mapState = (state) => {
 
 const mapDispatch = (dispatch) => {
   return {
-    getCart: (cart) => dispatch(getCart(cart)),
+    clearCart: () => dispatch(clearCart()),
   };
 };
 
