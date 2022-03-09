@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Order, Pizza } = require('../db/models');
+const { User, Order, Pizza, OrderItem } = require('../db/models');
 module.exports = router;
 
 //GET /api/orders/cart?userId={int}
@@ -32,8 +32,9 @@ router.post('/', async (req, res, next) => {
       await newCart.setUser(userId);
     } else if (req.body.items) {
       const newItems = req.body.items;
-      newItems.map(async (item) => {
-        await item.setOrder(newCart);
+      await newItems.map(async (item) => {
+        const itemModel = await OrderItem.findByPk(item.id);
+        await itemModel.setOrder(newCart);
       });
     }
     res.send(newCart);
@@ -47,10 +48,11 @@ router.post('/', async (req, res, next) => {
 router.put('/:orderId', async (req, res, next) => {
   try {
     const oldOrder = await Order.findByPk(req.params.orderId);
-
     //Decrease the quantity of each pizza by the quantity of the order item.
     //1. Get the order items and the corresponding pizza quantities.
-    const orderItems = await oldOrder.getOrderItems();
+    console.log('oldOrder: ', oldOrder);
+    let orderItems = await oldOrder.getOrderItems();
+    console.log('orderItems: ', orderItems);
     let pizzaQuantities = await Promise.all(
       orderItems.map(async (item) => {
         const pizza = await item.getPizza();
@@ -98,21 +100,38 @@ router.put('/:orderId', async (req, res, next) => {
 //   }
 // })
 
+// router.get('/', async (req, res, next) => {
+//   try {
+//     if (req.query.userId) {
+//       const userId = req.query.userId;
+//       const user = await User.findByPk(userId);
+//       const pendingOrders = await user.getOrders({ where: { status: 'Pending'}});
+//       const cart = pendingOrders[0];
+//       res.send(cart);
+//     } else {
+//       const orders = await Order.findAll();
+//       res.send(orders);
+//     }
+//   } catch (error) {
+//     next(error);
+//   }
+// });
+
 // helper function for grabbing previous orders
 
-async function getCompletedOrders(userId) {
-  try {
-    const orders = await Order.findAll({
-      where: {
-        id: userId,
-        status: 'Completed',
-      },
-    });
-    return orders;
-  } catch (error) {
-    console.error(error);
-  }
-}
+// async function getCompletedOrders(userId) {
+//   try {
+//     const orders = await Order.findAll({
+//       where: {
+//         id: userId,
+//         status: 'Completed',
+//       },
+//     });
+//     return orders;
+//   } catch (error) {
+//     console.error(error);
+//   }
+// }
 
 // router.get('/orderHistory', async function (req, res, next) {
 //   try {

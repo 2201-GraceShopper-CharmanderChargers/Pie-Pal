@@ -16,7 +16,6 @@ import CheckoutSuccess from './CheckoutSuccess';
 import CheckoutFailure from './CheckoutFailure';
 import Checkout from './Checkout';
 
-
 // import LoginForm from './LoginForm';
 // import SignUpForm from './SignUpForm';
 
@@ -29,4 +28,5 @@ export {
   HomePage,
   Checkout,
   CheckoutSuccess,
+  CheckoutFailure,
 };

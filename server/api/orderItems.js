@@ -41,11 +41,10 @@ router.post('/', async (req, res, next) => {
   try {
     //Create an orderItem based on the info provided from the pizza object. NOTE: Quantity refers to the quantity selected by the user, not the inventory quantity.
     const { user, newPizza } = req.body;
-
     let cartItems;
     let cart;
     //If there's a user, get the cart and associated items from their pending order.
-    if (user) {
+    if (user === {}) {
       const userModel = await User.findByPk(user.id);
       const pendingOrders = await userModel.getOrders({
         where: { status: 'Pending' },

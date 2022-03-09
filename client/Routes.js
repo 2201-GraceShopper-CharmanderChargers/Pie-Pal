@@ -12,6 +12,7 @@ import {
   HomePage,
   Checkout,
   CheckoutSuccess,
+  CheckoutFailure,
 } from './components';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -45,10 +46,17 @@ class Routes extends React.Component {
             <Route exact path="/" component={HomePage} />
             <Route exact path="/home" component={HomePage} />
             <Route exact path="/pizzas" component={AllPizzas} />
+            <Route exact path="/cart" component={Cart} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
+            <Route exact path="/checkout" component={Checkout} />
+            <Route exact path="/checkoutsuccess" component={CheckoutSuccess} />
+            <Route
+              exact
+              path="/checkoutfailure"
+              render={(props) => <CheckoutFailure {...props} />}
+            />
             <Route exact path="/:pizzaId" component={SinglePizza} />
-            {/* <Route path="/*" component={notFoundpage} /> */}
             <Redirect to="/home" />
           </Switch>
         )}

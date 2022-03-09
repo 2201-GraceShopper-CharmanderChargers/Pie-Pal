@@ -1,6 +1,6 @@
+import React from 'react';
 
-
-const notFoundpage = () => (
+const PageNotFound = () => (
   <div className="Container NotFoundDiv">
     <h1>Uh Oh, not what you're looking for?</h1>
 
@@ -11,4 +11,4 @@ const notFoundpage = () => (
   </div>
 );
 
-export default notFoundpage;
+export default PageNotFound;

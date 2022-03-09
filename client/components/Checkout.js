@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getCart } from '../store/cart';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 
 ///notes => handleSUbmit for both different forms
 // handleorder to the actual checkout
@@ -27,7 +28,7 @@ class Checkout extends React.Component {
     const user = this.props.user;
     try {
       let order; //either the current user's or a new guest one.
-      if (user) {
+      if (this.props.isLoggedIn) {
         //If someone is logged in as a user, get the cart order.
         const { data: userOrder } = await axios.get(
           `/api/orders/cart?userId=${user.id}`
@@ -51,11 +52,13 @@ class Checkout extends React.Component {
       //If anything is out of stock, get those items and don't proceed.
       if (outOfStock.length > 0) {
         this.setState({ outOfStock: outOfStock, submitted: true });
-      } else if (newOrder) {
+      } else {
         //Else, create a new pending order.
-        await axios.post('/api/orders', {
-          userId: user.id,
-        });
+        if (this.props.isLoggedIn) {
+          await axios.post('/api/orders', {
+            userId: user.id,
+          });
+        }
         this.props.getCart([]); //Clear the store cart.
         this.setState({ submitted: true });
       }
@@ -244,6 +247,7 @@ const mapState = (state) => {
   return {
     user: state.user,
     cart: state.cart,
+    isLoggedIn: !!state.user.id,
   };
 };
 
@@ -254,6 +258,10 @@ const mapDispatch = (dispatch) => {
 };
 
 export default connect(mapState, mapDispatch)(Checkout);
+
+Checkout.propTypes = {
+  isLoggedIn: PropTypes.bool.isRequired,
+};
 
 // import React from 'react';
 // import Form from 'react-bootstrap/Form';
