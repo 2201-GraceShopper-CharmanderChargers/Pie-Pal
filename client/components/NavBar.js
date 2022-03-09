@@ -17,7 +17,7 @@ const NavBar = ({ handleClick, isLoggedIn, cartSize, isAdmin }) => (
     <nav>
       {isLoggedIn ? (
         <div>
-          <Link className="navLink" to="/userhome">
+          <Link className="navLink" to="/home">
             <HomeIcon />
             Home
           </Link>
@@ -50,6 +50,12 @@ const NavBar = ({ handleClick, isLoggedIn, cartSize, isAdmin }) => (
           <Link className="navLink" to="/login">
             <LoginIcon />
             Login
+          </Link>
+          <Link className="navLink" to="/cart">
+            <Badge badgeContent={cartSize} color="success">
+              <ShoppingCartIcon color="primary" />
+            </Badge>
+            Cart
           </Link>
           <Link className="navLink" to="/signup">
             <AirplaneTicketIcon />
