@@ -17,44 +17,50 @@ const NavBar = ({ handleClick, isLoggedIn, cartSize, isAdmin }) => (
     <nav>
       {isLoggedIn ? (
         <div>
-          <Link style={{
-            textDecoration: 'none',
-            color: 'white',
-            fontFamily: 'monospace',
-            fontSize: '50px'
-          }} to="/pizzas"
-          ><PieChartOutlineIcon />
+          <Link
+            style={{
+              textDecoration: 'none',
+              color: 'white',
+              fontFamily: 'monospace',
+              fontSize: '50px',
+            }}
+            to="/pizzas"
+          >
+            <PieChartOutlineIcon />
             PIE-PAL
           </Link>
-            <Link className="navLink" id="home" to="/userhome">
-              <HomeIcon />
-              Home
-            </Link>
-            <Link className="navLink" to="/pizzas">
-              <LocalPizzaIcon />
-              Pizzas
-            </Link>
-            <Link className="navLink" to="/cart">
-              <Badge badgeContent={cartSize} color="success">
-                <ShoppingCartIcon color="danger" />
-              </Badge>
-              Cart
-            </Link>
-            <Link className="navLink" href="#" onClick={handleClick}>
-              <LogoutIcon />
-              Logout
-            </Link>
-            </div>
+          <Link className="navLink" id="home" to="/home">
+            <HomeIcon />
+            Home
+          </Link>
+          <Link className="navLink" to="/pizzas">
+            <LocalPizzaIcon />
+            Pizzas
+          </Link>
+          <Link className="navLink" to="/cart">
+            <Badge badgeContent={cartSize} color="success">
+              <ShoppingCartIcon color="danger" />
+            </Badge>
+            Cart
+          </Link>
+          <Link className="navLink" href="#" onClick={handleClick}>
+            <LogoutIcon />
+            Logout
+          </Link>
+        </div>
       ) : (
         <div>
-            {/* The navbar will show these links before you log in */}
-          <Link style={{
-            textDecoration: 'none',
-            color: 'white',
-            fontFamily: 'monospace',
-            fontSize: '50px'
-          }} to="/pizzas"
-          ><PieChartOutlineIcon />
+          {/* The navbar will show these links before you log in */}
+          <Link
+            style={{
+              textDecoration: 'none',
+              color: 'white',
+              fontFamily: 'monospace',
+              fontSize: '50px',
+            }}
+            to="/pizzas"
+          >
+            <PieChartOutlineIcon />
             PIE-PAL
           </Link>
           <Link className="navLink" to="/home">
@@ -79,6 +85,12 @@ const NavBar = ({ handleClick, isLoggedIn, cartSize, isAdmin }) => (
             <AirplaneTicketIcon />
             Sign Up
           </Link>
+          <Link className="navLink" to="/cart">
+            <Badge badgeContent={cartSize} color="success">
+              <ShoppingCartIcon color="danger" />
+            </Badge>
+            Cart
+          </Link>
         </div>
       )}
     </nav>
@@ -102,5 +114,3 @@ const mapDispatch = (dispatch) => {
 };
 
 export default connect(mapState, mapDispatch)(NavBar);
-
-

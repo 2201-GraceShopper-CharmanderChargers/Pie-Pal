@@ -3,7 +3,7 @@ import React from 'react';
 import CarouselSlide from './Carousel';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import Container from 'react-bootstrap/Container'
+import Container from 'react-bootstrap/Container';
 
 class HomePage extends React.Component {
   constructor(props) {
@@ -14,13 +14,12 @@ class HomePage extends React.Component {
     this.loading = false;
   }
   render() {
-    const {isLoggedIn} = this.props
-    console.log(isLoggedIn)
+    const { isLoggedIn } = this.props;
+    console.log(isLoggedIn);
     return (
       <div>
-        <div>
-          <Container></Container>
-          <CarouselSlide />
+        <CarouselSlide />
+        <div id="homepage-message">
           {isLoggedIn ? (
             <div className="userpagecontent">
               <h3 className="homeheader">Welcome Back!</h3>
@@ -43,36 +42,34 @@ class HomePage extends React.Component {
                   wide variety of options to choose from.
                 </h5>
               </div>
-              <div>
-                <h3 id="starthere">
-                  Start Here <i class="arrow right"></i>
-                </h3>
-              </div>
             </div>
           )}
 
-        
-
-          <div className="icon">
-            <Link to="/pizzas">
-              <div className="pizza-container">
-                <div className="pizza" id="hvr-sink">
-                  <div className="basil">
-                    <div className="leaf"></div>
-                  </div>
-                  <div className="onions"></div>
-                  <div className="olives"></div>
-                  <div className="pepperonis"></div>
-                  <div className="slices">
-                    <div className="slice slice-1"></div>
-                    <div className="slice slice-2"></div>
-                    <div className="slice slice-3"></div>
-                    <div className="slice slice-4"></div>
+          <div id="icon-container">
+            <div className="icon">
+              <Link to="/pizzas">
+                <div className="pizza-container">
+                  <div className="pizza" id="hvr-sink">
+                    <div className="basil">
+                      <div className="leaf"></div>
+                    </div>
+                    <div className="onions"></div>
+                    <div className="olives"></div>
+                    <div className="pepperonis"></div>
+                    <div className="slices">
+                      <div className="slice slice-1"></div>
+                      <div className="slice slice-2"></div>
+                      <div className="slice slice-3"></div>
+                      <div className="slice slice-4"></div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </Link>
+              </Link>
+            </div>
           </div>
+          <h3 id="starthere">
+            Start Here <i class="arrow right"></i>
+          </h3>
         </div>
       </div>
     );
@@ -86,10 +83,6 @@ const mapState = (state) => {
   };
 };
 
-
-
 // The `withRouter` wrapper makes sure that updates are not blocked
 // when the url changes
 export default connect(mapState)(HomePage);
-
-
