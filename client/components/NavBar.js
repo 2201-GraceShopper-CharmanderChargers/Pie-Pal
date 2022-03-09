@@ -73,6 +73,12 @@ const NavBar = ({ handleClick, isLoggedIn, cartSize, isAdmin }) => (
             <AirplaneTicketIcon />
             Sign Up
           </Link>
+          <Link className="navLink" to="/cart">
+            <Badge badgeContent={cartSize} color="success">
+              <ShoppingCartIcon color="danger" />
+            </Badge>
+            Cart
+          </Link>
         </div>
       )}
     </nav>
@@ -96,5 +102,3 @@ const mapDispatch = (dispatch) => {
 };
 
 export default connect(mapState, mapDispatch)(NavBar);
-
-

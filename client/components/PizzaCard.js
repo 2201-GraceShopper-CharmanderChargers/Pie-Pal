@@ -51,21 +51,15 @@ class PizzaCard extends React.Component {
             <Card.Title>{pizza.name}</Card.Title>
             <Card.Text className="cardtext">{pizza.description}</Card.Text>
             <Card.Text>{pizza.price}</Card.Text>
-            {isLoggedIn ? (
-              <OverlayTrigger
-                trigger="click"
-                placement="bottom"
-                overlay={this.state.showOverlay ? popover : <div />}
-              >
-                <Button variant="danger" onClick={this.handleSubmit}>
-                  Add to Cart
-                </Button>
-              </OverlayTrigger>
-            ) : (
-              <Button variant="danger" type="button">
-                Add to wishlist
+            <OverlayTrigger
+              trigger="click"
+              placement="bottom"
+              overlay={this.state.showOverlay ? popover : <div />}
+            >
+              <Button variant="danger" onClick={this.handleSubmit}>
+                Add to Cart
               </Button>
-            )}
+            </OverlayTrigger>
           </Card.Body>
         </Card>
       </div>
