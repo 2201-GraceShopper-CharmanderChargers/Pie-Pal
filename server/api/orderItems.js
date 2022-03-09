@@ -41,24 +41,46 @@ router.post('/', async (req, res, next) => {
   try {
     //Create an orderItem based on the info provided from the pizza object. NOTE: Quantity refers to the quantity selected by the user, not the inventory quantity.
     const { user, newPizza } = req.body;
-    const newOrderItem = await OrderItem.create({
-      name: newPizza.name,
-      description: newPizza.description,
-      price: newPizza.price,
-      imageUrl: newPizza.imageUrl,
-      quantity: newPizza.quantity,
-    });
-    //Associate the order item with its pizza item. Use this to adjust quantity of pizzas upon checkout.
-    newOrderItem.setPizza(newPizza.id);
 
-    //If this OrderItem is created by a registered user, assign it to its pending order (cart).
+    let cartItems;
+    let cart;
+    //If there's a user, get the cart and associated items from their pending order.
     if (user) {
       const userModel = await User.findByPk(user.id);
       const pendingOrders = await userModel.getOrders({
         where: { status: 'Pending' },
       });
-      const cart = pendingOrders[0];
-      await newOrderItem.setOrder(cart);
+      cart = pendingOrders[0];
+      cartItems = await cart.getOrderItems();
+    } else {
+      //If not, the guest has all order items not assigned to an order.
+      cartItems = await OrderItem.findAll({ where: { orderId: null } });
+    }
+
+    //Check whether the order item already exists in the cart. If so, only update the quantity.
+    const matchingOrderItems = cartItems.filter(
+      (item) => item.name === newPizza.name
+    );
+    let newOrderItem;
+    if (matchingOrderItems.length > 0) {
+      newOrderItem = matchingOrderItems[0];
+      const newQuantity = newOrderItem.quantity + newPizza.quantity;
+      await newOrderItem.update({ quantity: newQuantity });
+    } else {
+      //If it does not already exist, create a new order item.
+      newOrderItem = await OrderItem.create({
+        name: newPizza.name,
+        description: newPizza.description,
+        price: newPizza.price,
+        imageUrl: newPizza.imageUrl,
+        quantity: newPizza.quantity,
+      });
+      if (user) {
+        //If there's a user, assign that new order item to the cart.
+        newOrderItem.setOrder(cart);
+      }
+      //Associate the order item with its pizza item. Use this to adjust quantity of pizzas upon checkout.
+      newOrderItem.setPizza(newPizza.id);
     }
     res.send(newOrderItem);
   } catch (error) {
