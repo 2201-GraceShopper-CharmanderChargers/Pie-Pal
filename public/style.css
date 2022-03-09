@@ -15,10 +15,10 @@ body {
 
 nav {
   align-items: center;
-  background-color: #09ac47;
+  background-color: rgb(21, 135, 89);
   display: flex;
   height: 80px;
-  padding: 10px;
+  padding: 20px;
   /* margin-bottom: 10px; */
 }
 

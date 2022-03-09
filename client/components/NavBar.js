@@ -17,50 +17,44 @@ const NavBar = ({ handleClick, isLoggedIn, cartSize, isAdmin }) => (
     <nav>
       {isLoggedIn ? (
         <div>
-          <Link
-            style={{
-              textDecoration: 'none',
-              color: 'white',
-              fontFamily: 'monospace',
-              fontSize: '50px',
-            }}
-            to="/pizzas"
-          >
-            <PieChartOutlineIcon />
+          <Link style={{
+            textDecoration: 'none',
+            color: 'white',
+            fontFamily: 'monospace',
+            fontSize: '50px'
+          }} to="/pizzas"
+          ><PieChartOutlineIcon style={{ fontSize: 40 }} />
             PIE-PAL
           </Link>
-          <Link className="navLink" id="home" to="/home">
-            <HomeIcon />
-            Home
-          </Link>
-          <Link className="navLink" to="/pizzas">
-            <LocalPizzaIcon />
-            Pizzas
-          </Link>
-          <Link className="navLink" to="/cart">
-            <Badge badgeContent={cartSize} color="success">
-              <ShoppingCartIcon color="danger" />
-            </Badge>
-            Cart
-          </Link>
-          <Link className="navLink" href="#" onClick={handleClick}>
-            <LogoutIcon />
-            Logout
-          </Link>
-        </div>
+            <Link className="navLink" id="home" to="/home">
+              <HomeIcon />
+              Home
+            </Link>
+            <Link className="navLink" to="/pizzas">
+              <LocalPizzaIcon />
+              Pizzas
+            </Link>
+            <Link className="navLink" to="/cart">
+              <Badge badgeContent={cartSize} color="success">
+                <ShoppingCartIcon color="danger" />
+              </Badge>
+              Cart
+            </Link>
+            <Link className="navLink" href="#" onClick={handleClick}>
+              <LogoutIcon />
+              Logout
+            </Link>
+            </div>
       ) : (
         <div>
-          {/* The navbar will show these links before you log in */}
-          <Link
-            style={{
-              textDecoration: 'none',
-              color: 'white',
-              fontFamily: 'monospace',
-              fontSize: '50px',
-            }}
-            to="/pizzas"
-          >
-            <PieChartOutlineIcon />
+            {/* The navbar will show these links before you log in */}
+          <Link style={{
+            textDecoration: 'none',
+            color: 'white',
+            fontFamily: 'monospace',
+            fontSize: '50px'
+          }} to="/pizzas"
+          ><PieChartOutlineIcon style={{ fontSize: 40 }} />
             PIE-PAL
           </Link>
           <Link className="navLink" to="/home">
