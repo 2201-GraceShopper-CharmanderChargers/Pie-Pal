@@ -9,7 +9,7 @@ export { default as NavBar } from './NavBar';
 
 import { Login, Signup } from './Auth';
 import AllPizzas from './AllPizzas';
-import SinglePizza from './SinglePizza';
+import OnePizza from './OnePizza';
 import Cart from './Cart';
 import HomePage from './HomePage';
 import CheckoutSuccess from './CheckoutSuccess';
@@ -23,7 +23,7 @@ export {
   Login,
   Signup,
   AllPizzas,
-  SinglePizza,
+  OnePizza,
   Cart,
   HomePage,
   Checkout,

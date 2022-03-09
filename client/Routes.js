@@ -7,7 +7,7 @@ import {
   Login,
   Signup,
   AllPizzas,
-  SinglePizza,
+  OnePizza,
   Cart,
   HomePage,
   Checkout,
@@ -37,7 +37,7 @@ class Routes extends React.Component {
               path="/checkoutfailure"
               render={(props) => <CheckoutFailure {...props} />}
             />
-            <Route exact path="/:pizzaId" component={SinglePizza} />
+            <Route exact path="/:pizzaId" component={OnePizza} />
             {/* <Route exact path="/*" component={notFoundpage} /> */}
             <Redirect to="/home" />
           </Switch>
@@ -56,7 +56,7 @@ class Routes extends React.Component {
               path="/checkoutfailure"
               render={(props) => <CheckoutFailure {...props} />}
             />
-            <Route exact path="/:pizzaId" component={SinglePizza} />
+            <Route exact path="/:pizzaId" component={OnePizza} />
             <Redirect to="/home" />
           </Switch>
         )}
