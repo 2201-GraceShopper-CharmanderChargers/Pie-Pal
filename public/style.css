@@ -6,7 +6,7 @@
 }
 
 body {
-  background: linear-gradient(#c0c0c0, #c0c0c0);
+  background: linear-gradient(#df3630, #cf8a8a);
   height: 100vh;
   padding: 0;
   margin: 0;
@@ -50,6 +50,8 @@ main {
   padding: 20px;
   height: 10%;
   justify-content: space-between;
+
+
 }
 
 .auth {
@@ -87,7 +89,8 @@ main {
   height : 350px !important;
   /* width: 318px !important */
   width: 400px !important;
-  
+
+
 }
 
 /* .allpizzas > * {
@@ -99,9 +102,19 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
- 
 
+
+
+}
+
+.checkoutSuccess {
+  padding: 100px;
+  margin-left: 20%;
+  margin-top:3%;
+  margin-right: 20%;
+  background-color: white;
+  padding: 2%;
+  border-radius: 50px;
 }
 
 .single-pizza > h1,h2,h3,h4 {
@@ -116,13 +129,15 @@ main {
 .single-pizza {
   border-radius: 55px 55px 55px 55px;
   padding-bottom: 10%;
-   
+
+
 
 }
 #singleContent {
   padding-top: 20px;
   text-align: center;
- 
+
+
 
 }
 
@@ -162,16 +177,17 @@ main {
 }
 
 .navLink {
-  padding: 0 25px 0 !important;
-  font-size: 20px;
+  padding: 0 20px 0 !important;
+  font-size: 25px;
   font-family: monospace;
+  color: white;
+  text-decoration: none;
 }
 
-.navLinkHeader {
-  font-size: 50px !important;
-  font-family: monospace;
+/* #home {
+  margin-left: 100px
+} */
 
-}
 
 /* .view {
   background-image: url('https://pbs.twimg.com/media/DmFbEO7W0AIci5f?format=jpg&name=large');
@@ -190,18 +206,25 @@ main {
   margin-right: 100px;
   /* opacity: .8; */
   /* margin-bottom: 20px; */
+}
 
+.carousel {
+  margin-left: 30%;
+  padding-right: 10%;
+  margin-top: 10%;
+  position: absolute;
 }
 
 .carouselslide {
   display: block;
   width: 100px;
-  height: 800px;
-
+  height: 500px;
+  margin-right: 100px;
+  margin-bottom: 20px;
 }
 .homeheader {
  padding-bottom: 5%;
-  font-family: 'Roboto', sans-serif; 
+  font-family: 'Roboto', sans-serif;
   font-family: 'Lato', sans-serif;
 }
 
@@ -260,7 +283,7 @@ main {
   font-family: 'Lato', sans-serif;
   bottom: 10%;
   padding-bottom: 20%
-  
+
 }
 
 /* home page icon */
@@ -276,13 +299,13 @@ main {
   left: 55%;
   top: 125%;
 
- 
-} 
+
+}
 
 .icon > .pizza-container {
    position: absolute;
   padding-bottom: 10%;
-  
+
 }
 
 .pizza-container {
@@ -291,14 +314,14 @@ main {
   justify-content: center;
   margin-top: 50px;
   padding-bottom: 100%;
-  
-  
+
+
 
 
 }
 
 .pizza {
-  
+
    position: absolute;
   width: 100px;
   height: 100px;
@@ -313,13 +336,13 @@ main {
 
   .pizza:before {
     content: '';
-   
+
     position: absolute;
     width: 62.5px;
     height: 66.25px;
     margin-top: 15%;
     margin-right: 100%;
-    
+
     transform: rotate(45deg);
     left: 66%;
     z-index: 20;
@@ -520,7 +543,7 @@ margin-top: 10%;
 } */
 /* .adminSinglePizza {
   align-content: center;
-  
+
 } */
 
 
@@ -530,7 +553,7 @@ margin-top: 10%;
   padding-right: 10%;
   margin-top: 10%;
   position: absolute;
-  
+
 }
 
 .carouselslide {
@@ -569,5 +592,5 @@ margin-top: 10%;
   bottom: 35%;
   margin-right: 60%;
   padding-left: 10%;
-  
+
 } */
