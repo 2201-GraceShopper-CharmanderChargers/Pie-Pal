@@ -48,12 +48,12 @@ const CarouselSlide = () => {
   return (
     <div className="carousel">
       <Carousel fade controls={false} pause={false}>
-        {imageArr.map((pizza) => {
+        {imageArr.map((pizza, i) => {
           return (
             <Carousel.Item
               interval={2000}
               className="carosuelImage"
-              key={pizza.id}
+              key={i}
             >
               <img className="carouselslide" src={pizza} />
             </Carousel.Item>

@@ -20,7 +20,7 @@ nav {
   display: flex;
   height: 80px;
   padding: 10px;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
 }
 
 
@@ -177,70 +177,112 @@ main {
   background-image: url('https://pbs.twimg.com/media/DmFbEO7W0AIci5f?format=jpg&name=large');
 } */
 
-
-
 .carousel {
-  margin-left: 30%;
-  padding-right: 10%;
-  margin-top: 10%;
-  position: absolute;
-  
+  display: block;
+
+  width: 100%;
+  border: 2px;
+  height: 10%;
+}
+.carosuelImage > img {
+  display: block;
+  width: 100%;
+  margin-right: 100px;
+  /* opacity: .8; */
+  /* margin-bottom: 20px; */
+
 }
 
 .carouselslide {
+  display: block;
   width: 100px;
-  height: 500px;
-  margin-right: 100px;
-  margin-bottom: 20px;
+  height: 800px;
+
+}
+.homeheader {
+ padding-bottom: 5%;
+  font-family: 'Roboto', sans-serif; 
+  font-family: 'Lato', sans-serif;
 }
 
-.carosuelImage > img {
+.hometext {
+  position: relative;
+  /* left: 5%; */
+  z-index: 20;
+  color:black;
+  text-shadow: 0 1px 2px rgba(1,1,1,5);
+  /* text-shadow: 10px 10px 5px rgba(1,1,1,5); */
+   /* text-shadow: 10px 10px 5px rgba(1,1,1,5); */
+  /* box-sizing: border-box; */
+  text-align: center;
+  top: 120%;
+  margin-top:5%;
+  /* margin-bottom: 50%;
+  bottom: 40%; */
+  margin-right: 50%;
+  margin-left: 10%;
+}
 
-  width: 100%;
+#starthere{
+  position: absolute;
+  margin-left: 100%;
+  font-family: monospace;
+  /* text-shadow: 10px 10px 5px rgba(1,1,1,5); */
+  text-shadow: 0 1px 2px rgba(1,1,1,5);
+  padding: 10px;
+  z-index: 20;
+  color:black;
+  /* background-color: grey;
   border-radius: 55px 55px 55px 55px;
   box-shadow: 10px 10px 5px;
-  border: 2px;
+  border: 2px; */
+  left: 62%;
+  /* margin-bottom: 21% */
+  top: 120%;
+}
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
 }
 
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
 .formContainer {
   padding: 110 0 50 0;
 }
 
-
-
-/* Css home page stuff */
-
-
-.homeheader {
-  padding-bottom: 5%;
-  font-family: monospace;
-
-}
-.hometext {
-  position: absolute;
-  box-sizing: border-box;
-  align-content: center;
-  bottom: 35%;
-  margin-right: 60%;
-  padding-left: 10%;
-  
-}
 .aboutus {
-  font-family: monospace;
-
+  margin-top: 10%;
+  font-family: 'Lato', sans-serif;
+  bottom: 10%;
+  padding-bottom: 20%
+  
 }
 
 /* home page icon */
-.icon {
+.icon > * {
   position: absolute;
   box-sizing: border-box;
-  bottom: 30%;
-  margin-right: 20%;
+  /* bottom: 70%; */
+
+  margin-right: 100%;
   margin-left: 20%;
-}
+  z-index: 20;
+  color:black;
+  left: 55%;
+  top: 125%;
+
+ 
+} 
 
 .icon > .pizza-container {
+   position: absolute;
   padding-bottom: 10%;
+  
 }
 
 .pizza-container {
@@ -249,12 +291,15 @@ main {
   justify-content: center;
   margin-top: 50px;
   padding-bottom: 100%;
+  
+  
 
 
 }
 
 .pizza {
-  position: relative;
+  
+   position: absolute;
   width: 100px;
   height: 100px;
   background-color: #ffeb3b;
@@ -268,12 +313,13 @@ main {
 
   .pizza:before {
     content: '';
+   
     position: absolute;
     width: 62.5px;
     height: 66.25px;
     margin-top: 15%;
     margin-right: 100%;
-    background-color: #c0c0c0;
+    
     transform: rotate(45deg);
     left: 66%;
     z-index: 20;
@@ -347,7 +393,7 @@ main {
   }
   .slices {
     display: flex;
-    position: relative;
+     position: absolute;
     width: 100%;
     height: 100%;
     justify-content: center;
@@ -428,7 +474,7 @@ margin-top: 10%;
   margin-left: 35%;
 }
 
-.arrow {
+/* .arrow {
   border: solid black;
   border-width: 0 3px 3px 0;
   display: inline-block;
@@ -438,7 +484,7 @@ margin-top: 10%;
 .right {
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
-}
+} */
 #starthere{
   position: absolute;
   margin-left: 7%;
@@ -474,5 +520,54 @@ margin-top: 10%;
 } */
 /* .adminSinglePizza {
   align-content: center;
+  
+} */
+
+
+
+/* .carousel {
+  margin-left: 30%;
+  padding-right: 10%;
+  margin-top: 10%;
+  position: absolute;
+  
+}
+
+.carouselslide {
+  width: 100px;
+  height: 500px;
+  margin-right: 100px;
+  margin-bottom: 20px;
+}
+
+.carosuelImage > img {
+
+  width: 100%;
+  border-radius: 55px 55px 55px 55px;
+  box-shadow: 10px 10px 5px;
+  border: 2px;
+}
+
+.formContainer {
+  padding: 110 0 50 0;
+} */
+
+
+
+/* Css home page stuff
+
+
+.homeheader {
+  padding-bottom: 5%;
+  font-family: monospace;
+
+}
+.hometext {
+  position: absolute;
+  box-sizing: border-box;
+  align-content: center;
+  bottom: 35%;
+  margin-right: 60%;
+  padding-left: 10%;
   
 } */

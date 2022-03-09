@@ -9,13 +9,9 @@ import {
   AllPizzas,
   SinglePizza,
   Cart,
-  UserHome,
   HomePage,
   Checkout,
   CheckoutSuccess,
-  AdminPage,
-  AdminAllPizzas,
-  AdminSinglePizzaEdit,
 } from './components';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -29,15 +25,15 @@ class Routes extends React.Component {
       <div>
         {isLoggedIn ? (
           <Switch>
-            <Route exact path="/" component={UserHome} />
-            <Route exact path="/userhome" component={UserHome} />
+            <Route exact path="/" component={HomePage} />
+            <Route exact path="/home" component={HomePage} />
             <Route exact path="/pizzas" component={AllPizzas} />
             <Route exact path="/cart" component={Cart} />
             <Route exact path="/checkout" component={Checkout} />
             <Route exact path="/checkoutsuccess" component={CheckoutSuccess} />
             <Route exact path="/:pizzaId" component={SinglePizza} />
             {/* <Route exact path="/*" component={notFoundpage} /> */}
-            <Redirect to="/userhome" />
+            <Redirect to="/home" />
           </Switch>
         ) : (
           <Switch>
