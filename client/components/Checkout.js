@@ -232,27 +232,14 @@ class Checkout extends React.Component {
             </Form>
           </div>
         </div>
-<<<<<<< HEAD
-        <Link to="/checkoutsuccess">
-            <Button
-            variant="primary"
-            type="Submit"
-            size="lg"
-            onClick={this.processOrder, () => console.log(this.state)}
-          >
-            Confirm Order
-          </Button>
-        </Link>
-=======
         <Button
           variant="primary"
           type="Submit"
           size="lg"
-          onClick={this.processOrder}
-        >
-          Confirm Order
-        </Button>
->>>>>>> 3515ab5a46c41c05789701a4cec53cea88d2ecf7
+            onClick={this.processOrder}
+          >
+            Confirm Order
+          </Button>
       </Card>
     );
   }

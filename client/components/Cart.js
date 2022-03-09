@@ -110,7 +110,7 @@ class Cart extends React.Component {
               </Link>
                 :
               <Button variant="success" disabled>
-                Checkout!
+                Please add some pizza first!
               </Button>
             }
         </div>

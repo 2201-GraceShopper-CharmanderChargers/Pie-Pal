@@ -6,7 +6,7 @@
 }
 
 body {
-  background: linear-gradient(#c0c0c0, #c0c0c0);
+  background: linear-gradient(#df3630, #cf8a8a);
   height: 100vh;
   padding: 0;
   margin: 0;
@@ -50,8 +50,8 @@ main {
   padding: 20px;
   height: 10%;
   justify-content: space-between;
-  
-  
+
+
 }
 
 .auth {
@@ -89,7 +89,7 @@ main {
   height : 350px !important;
   /* width: 318px !important */
   width: 400px !important;
-  
+
 }
 
 /* .allpizzas > * {
@@ -101,9 +101,16 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
- 
+}
 
+.checkoutSuccess {
+  padding: 100px;
+  margin-left: 20%;
+  margin-top:3%;
+  margin-right: 20%;
+  background-color: white;
+  padding: 2%;
+  border-radius: 50px;
 }
 
 .single-pizza > h1,h2,h3,h4 {
@@ -118,13 +125,13 @@ main {
 .single-pizza {
   border-radius: 55px 55px 55px 55px;
   padding-bottom: 10%;
-   
+
 
 }
 #singleContent {
   padding-top: 20px;
   text-align: center;
- 
+
 
 }
 
@@ -164,16 +171,17 @@ main {
 }
 
 .navLink {
-  padding: 0 25px 0 !important;
-  font-size: 20px;
+  padding: 0 20px 0 !important;
+  font-size: 25px;
   font-family: monospace;
+  color: white;
+  text-decoration: none;
 }
 
-.navLinkHeader {
-  font-size: 50px !important;
-  font-family: monospace;
+/* #home {
+  margin-left: 100px
+} */
 
-}
 
 /* .view {
   background-image: url('https://pbs.twimg.com/media/DmFbEO7W0AIci5f?format=jpg&name=large');
@@ -186,7 +194,7 @@ main {
   padding-right: 10%;
   margin-top: 10%;
   position: absolute;
-  
+
 }
 
 .carouselslide {
@@ -225,7 +233,7 @@ main {
   bottom: 35%;
   margin-right: 60%;
   padding-left: 10%;
-  
+
 }
 .aboutus {
   font-family: monospace;
@@ -430,6 +438,7 @@ margin-top: 10%;
   margin-left: 35%;
 }
 
+
 .arrow {
   border: solid black;
   border-width: 0 3px 3px 0;
@@ -476,5 +485,5 @@ margin-top: 10%;
 } */
 /* .adminSinglePizza {
   align-content: center;
-  
+
 } */

@@ -14,12 +14,11 @@ import {
   Checkout,
   CheckoutSuccess,
   CheckoutFailure,
+  PageNotFound,
   AdminPage,
   AdminAllPizzas,
   AdminSinglePizzaEdit,
-  PageNotFound
-=======
->>>>>>> 3515ab5a46c41c05789701a4cec53cea88d2ecf7
+
 } from './components';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -56,7 +55,7 @@ class Routes extends React.Component {
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/:pizzaId" component={SinglePizza} />
-            {/* <Route path="/*" component={notFoundpage} /> */}
+            <Route path="/*" component={PageNotFound} />
             <Redirect to="/home" />
           </Switch>
         )}

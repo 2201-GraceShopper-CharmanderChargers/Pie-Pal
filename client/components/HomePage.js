@@ -3,6 +3,7 @@ import React from 'react';
 import CarouselSlide from './Carousel';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import Container from 'react-bootstrap/Container'
 
 class HomePage extends React.Component {
   constructor(props) {
@@ -16,6 +17,7 @@ class HomePage extends React.Component {
     return (
       <div>
         <div>
+          <Container></Container>
           <CarouselSlide />
           <div className="hometext">
             <h3 className="homeheader">Welcome to Pie Pal!</h3>
@@ -24,7 +26,7 @@ class HomePage extends React.Component {
               at Pie Pal we offer the opportunity to try pizza from anywhere in
               the country! With our state of the art package and delivery
               system, we can have your pizza delivered fresh, just as if it was
-              out of the oven. With hundreds of pizzeras that have joined this
+              out of the oven. With hundreds of pizzerias that have joined this
               network from around the states, you have a wide variety of options
               to choose from.
             </h5>
@@ -55,7 +57,7 @@ class HomePage extends React.Component {
               </Link>
             </div>
           </div>
-        </div>
+          </div>
       </div>
     );
   }
