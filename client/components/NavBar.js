@@ -75,6 +75,12 @@ const NavBar = ({ handleClick, isLoggedIn, cartSize, isAdmin }) => (
             <LoginIcon />
             Login
           </Link>
+          <Link className="navLink" to="/cart">
+            <Badge badgeContent={cartSize} color="success">
+              <ShoppingCartIcon color="primary" />
+            </Badge>
+            Cart
+          </Link>
           <Link className="navLink" to="/signup">
             <AirplaneTicketIcon />
             Sign Up

@@ -26,7 +26,8 @@ const imageArr = [
 
   'https://pbs.twimg.com/media/FM82sB-XIAYiOJz?format=jpg&name=medium',
 
-  '	https://pbs.twimg.com/media/Cgl86ZVXEAAJaO9?format=jpg&name=medium',
+  'https://pbs.twimg.com/media/Cgl86ZVXEAAJaO9?format=jpg&name=medium',
+  'https://pbs.twimg.com/media/EoSRxOyWEAY-Fdz?format=jpg&name=medium',
 ];
 
 const CarouselSlide = () => {
