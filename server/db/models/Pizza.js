@@ -20,6 +20,15 @@ const Pizza = db.define('pizza', {
       min: 0,
     },
   },
+  quantity: {
+    type: Sequelize.INTEGER,
+    allowNull: false,
+    defaultValue: 1,
+    validate: {
+      notEmpty: true,
+      min: 0,
+    },
+  },
   imageUrl: {
     type: Sequelize.TEXT,
     defaultValue:

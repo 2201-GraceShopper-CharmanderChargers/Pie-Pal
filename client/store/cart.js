@@ -53,8 +53,6 @@ export const addCart = (newPizza) => {
     try {
       // const { data: user } = await axios.get('/auth/thisUser');
       const user = store.getState().user;
-      console.log('user', user);
-      console.log(user);
       const { data: newOrderItem } = await axios.post('/api/orderItems', {
         user,
         newPizza,

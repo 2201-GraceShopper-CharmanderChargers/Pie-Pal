@@ -11,31 +11,31 @@ const AuthForm = (props) => {
   const { name, displayName, handleSubmit, error } = props;
 
   return (
-    <div className = "auth">
-        <Form onSubmit={handleSubmit} name={name || ''} className="container">
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Email address</Form.Label>
-            <Form.Control
-              name="email"
-              type="text"
-              placeholder="Enter email"
-              required
-            />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label>Password</Form.Label>
-            <Form.Control
-              name="password"
-              type="password"
-              placeholder="Password"
-              required
-            />
-          </Form.Group>
-          <Button variant="primary" type="submit">
-            {displayName}
-          </Button>
-          {error && error.response && <div>Wrong password or username</div>}
-        </Form>
+    <div className="auth">
+      <Form onSubmit={handleSubmit} name={name || ''} className="container">
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Label>Email address</Form.Label>
+          <Form.Control
+            name="email"
+            type="text"
+            placeholder="Enter email"
+            required
+          />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Label>Password</Form.Label>
+          <Form.Control
+            name="password"
+            type="password"
+            placeholder="Password"
+            required
+          />
+        </Form.Group>
+        <Button variant="primary" type="submit">
+          {displayName}
+        </Button>
+        {error && error.response && <div>Wrong password or username</div>}
+      </Form>
     </div>
   );
 };

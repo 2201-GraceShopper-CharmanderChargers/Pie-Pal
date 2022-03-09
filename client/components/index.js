@@ -13,6 +13,7 @@ import SinglePizza from './SinglePizza';
 import Cart from './Cart';
 import HomePage from './HomePage';
 import CheckoutSuccess from './CheckoutSuccess';
+import CheckoutFailure from './CheckoutFailure';
 import Checkout from './Checkout';
 
 
