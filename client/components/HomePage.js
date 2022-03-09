@@ -14,13 +14,26 @@ class HomePage extends React.Component {
     this.loading = false;
   }
   render() {
+    const {isLoggedIn} = this.props
+    console.log(isLoggedIn)
     return (
       <div>
         <div>
           <Container></Container>
           <CarouselSlide />
-          <div className="hometext">
+          {isLoggedIn ? (
+            <div className="userpagecontent">
+            <h3 className="homeheader">Welcome Back!</h3>
+            <h3 id="starthere">
+              See what we have this week <i class="arrow right"></i>
+            </h3>
+            </div>
+
+          ) : (
+            <div>
+             <div className="hometext">
             <h3 className="homeheader">Welcome to Pie Pal!</h3>
+            <hr />
             <h5 className="aboutus">
               Pizza has no rules and how you get it should be no different. Here
               at Pie Pal we offer the opportunity to try pizza from anywhere in
@@ -35,6 +48,10 @@ class HomePage extends React.Component {
             <h3 id="starthere">
               Start Here <i class="arrow right"></i>
             </h3>
+            </div>
+            </div>
+            )}
+
 
             <div className="icon">
               <Link to="/pizzas">
@@ -57,10 +74,22 @@ class HomePage extends React.Component {
               </Link>
             </div>
           </div>
-          </div>
       </div>
     );
   }
 }
 
-export default HomePage;
+const mapState = (state) => {
+  return {
+    isLoggedIn: !!state.auth.id,
+    isAdmin: state.user.isAdmin,
+  };
+};
+
+
+
+// The `withRouter` wrapper makes sure that updates are not blocked
+// when the url changes
+export default connect(mapState)(HomePage);
+
+

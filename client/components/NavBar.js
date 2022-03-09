@@ -26,7 +26,6 @@ const NavBar = ({ handleClick, isLoggedIn, cartSize, isAdmin }) => (
           ><PieChartOutlineIcon />
             PIE-PAL
           </Link>
-
             <Link className="navLink" id="home" to="/userhome">
               <HomeIcon />
               Home

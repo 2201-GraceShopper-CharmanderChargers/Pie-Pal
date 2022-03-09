@@ -9,16 +9,9 @@ import {
   AllPizzas,
   SinglePizza,
   Cart,
-  UserHome,
   HomePage,
   Checkout,
   CheckoutSuccess,
-  CheckoutFailure,
-  PageNotFound,
-  AdminPage,
-  AdminAllPizzas,
-  AdminSinglePizzaEdit,
-
 } from './components';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -32,8 +25,8 @@ class Routes extends React.Component {
       <div>
         {isLoggedIn ? (
           <Switch>
-            <Route exact path="/" component={UserHome} />
-            <Route exact path="/userhome" component={UserHome} />
+            <Route exact path="/" component={HomePage} />
+            <Route exact path="/home" component={HomePage} />
             <Route exact path="/pizzas" component={AllPizzas} />
             <Route exact path="/cart" component={Cart} />
             <Route exact path="/checkout" component={Checkout} />
@@ -45,7 +38,7 @@ class Routes extends React.Component {
             />
             <Route exact path="/:pizzaId" component={SinglePizza} />
             {/* <Route exact path="/*" component={notFoundpage} /> */}
-            <Redirect to="/userhome" />
+            <Redirect to="/home" />
           </Switch>
         ) : (
           <Switch>
@@ -55,7 +48,7 @@ class Routes extends React.Component {
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/:pizzaId" component={SinglePizza} />
-            <Route path="/*" component={PageNotFound} />
+            {/* <Route path="/*" component={PageNotFound} /> */}
             <Redirect to="/home" />
           </Switch>
         )}

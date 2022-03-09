@@ -39,7 +39,7 @@ export const authenticate = (email, password, method) => async (dispatch) => {
   }
   try {
     dispatch(setAuth(res.data.token));
-    history.push('/userhome');
+    history.push('/home');
   } catch (dispatchOrHistoryErr) {
     console.error(dispatchOrHistoryErr);
   }
