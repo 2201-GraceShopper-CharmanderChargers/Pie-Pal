@@ -4,6 +4,7 @@ import CarouselSlide from './Carousel';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Container from 'react-bootstrap/Container';
+import { getCart } from '../store/cart';
 
 class HomePage extends React.Component {
   constructor(props) {
@@ -12,10 +13,18 @@ class HomePage extends React.Component {
   }
   componentDidMount() {
     this.loading = false;
+    const userId = this.props.user.id ? this.props.user.id : -1;
+    this.props.getCart(userId);
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.user !== this.props.user) {
+      const userId = this.props.user.id ? this.props.user.id : -1;
+      this.props.getCart(userId);
+    }
   }
   render() {
     const { isLoggedIn } = this.props;
-    console.log(isLoggedIn);
     return (
       <div>
         <CarouselSlide />
@@ -80,9 +89,16 @@ const mapState = (state) => {
   return {
     isLoggedIn: !!state.auth.id,
     isAdmin: state.user.isAdmin,
+    user: state.user,
+  };
+};
+
+const mapDispatch = (dispatch) => {
+  return {
+    getCart: (userId) => dispatch(getCart(userId)),
   };
 };
 
 // The `withRouter` wrapper makes sure that updates are not blocked
 // when the url changes
-export default connect(mapState)(HomePage);
+export default connect(mapState, mapDispatch)(HomePage);
