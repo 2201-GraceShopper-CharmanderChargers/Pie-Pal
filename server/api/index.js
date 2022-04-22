@@ -1,6 +1,9 @@
 const router = require('express').Router();
 
 //only use user for now
+// router.use('/', requireAuthToken, (req, res, next) => {
+
+// })
 router.use('/users', require('./user'));
 router.use('/pizzas', require('./pizzas'));
 router.use('/orderItems', require('./orderItems'));
