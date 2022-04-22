@@ -1,7 +1,7 @@
-const User = require('./user');
-const Order = require('./order');
-const Pizza = require('./pizza');
-const OrderItem = require('./orderItem');
+const User = require('./User');
+const Order = require('./Order');
+const Pizza = require('./Pizza');
+const OrderItem = require('./OrderItem');
 const db = require('../db');
 
 /**

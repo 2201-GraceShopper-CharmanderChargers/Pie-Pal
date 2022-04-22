@@ -11,6 +11,7 @@ const requireToken = async (req, res, next) => {
     const token = req.headers.authorization;
     const user = await User.findByToken(token);
     req.user = user;
+    next()
   } catch (error) {
     console.error('cannot find user', error)
   }
@@ -19,7 +20,7 @@ const requireToken = async (req, res, next) => {
 const isAdmin = (req, res, next) => {
    if (!req.user.isAdmin) {
      return res.status(403).send('Halt, you shall not pass!');
-   }else {
+   } else {
      // if my user is an admin, let them through 
      next()
    }

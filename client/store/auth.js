@@ -30,6 +30,7 @@ export const authenticate = (email, password, method) => async (dispatch) => {
   let res;
   try {
     res = await axios.post(`/auth/${method}`, { email, password });
+    console.log('repsonse authenticate', res)
     window.localStorage.setItem(TOKEN, res.data.token);
     dispatch(me());
     
