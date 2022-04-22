@@ -39,16 +39,24 @@ const databaseName =
 
 let config;
 
+// if (process.env.DATABASE_URL) {
+//     config.dialectOptions = {
+//       ssl: {
+//         //require: true,
+//         rejectUnauthorized: false,
+//       },
+//     };
+// } else {
+//   config = {
+//     logging: false,
+//   };
+// }
+
 if (process.env.DATABASE_URL) {
-    config.dialectOptions = {
-      ssl: {
-        require: true,
-        rejectUnauthorized: false,
-      },
-    };
-} else {
-  config = {
-    logging: false,
+  config.dialectOptions = {
+    ssl: {
+      rejectUnauthorized: false,
+    },
   };
 }
 
