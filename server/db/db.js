@@ -5,9 +5,14 @@ const packageJson = require('../../package.json');
 const databaseName =
   packageJson.name + (process.env.NODE_ENV === 'test' ? '-test' : '');
 
+
+
 const config = {
   logging: false,
 };
+if (process.env.LOGGING === 'true') {
+  delete config.logging;
+}
 //let config;
 
 // if (process.env.DATABASE_URL) {
