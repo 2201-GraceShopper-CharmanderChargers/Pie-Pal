@@ -23,6 +23,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 //api routes and auth routes
 app.use('/auth', require('./auth'));
+
 app.use('/api', require('./api'));
 
 app.get('/', (req, res) =>

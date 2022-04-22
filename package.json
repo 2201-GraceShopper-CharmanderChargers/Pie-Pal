@@ -7,7 +7,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "build": "webpack -w",
+    "build": "webpack",
     "build:dev": "npm run build -- --watch --mode=development",
     "seed": "node seed.js",
     "start": "node server",
@@ -32,6 +32,7 @@
     "@mui/icons-material": "^5.5.0",
     "@mui/material": "^5.5.0",
     "@mui/styles": "^5.5.0",
+    "apollo-server-express": "^3.6.4",
     "axios": "^0.26.0",
     "bcrypt": "^5.0.1",
     "body-parser": "^1.19.2",

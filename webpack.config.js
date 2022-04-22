@@ -1,10 +1,10 @@
 module.exports = {
-  entry: ['regenerator-runtime/runtime.js', './client/index.js'],
+  entry: ['./client/index.js'],
   output: {
     path: __dirname,
     filename: './public/bundle.js',
   },
-  mode: 'development',
+  
   devtool: 'source-map',
   resolve: {
         extensions: ['.js', '.jsx']
