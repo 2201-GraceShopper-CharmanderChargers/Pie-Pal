@@ -1,7 +1,7 @@
 # Welcome To Pie-Pal  
 We sell pizza online!
 We’ve created a fullstack e-commerce application.
-See the store for yourself at [Pie-Pal](https://https://pie-palz.herokuapp.com/).
+See the store for yourself at [Pie-Pal](https://pie-pal.herokuapp.com/).
 
 
 ## Setup:
