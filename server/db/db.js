@@ -1,14 +1,17 @@
 const Sequelize = require('sequelize');
 const packageJson = require('../../package.json');
 
-
 const databaseName =
   packageJson.name + (process.env.NODE_ENV === 'test' ? '-test' : '');
 
-
-
 const config = {
   logging: false,
+  dialect: 'postgres',
+  protocol: 'postgres',
+  dialectOptions: {
+    ssl: true,
+    native: true,
+  },
 };
 if (process.env.LOGGING === 'true') {
   delete config.logging;
